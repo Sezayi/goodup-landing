@@ -99,16 +99,16 @@ var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Layout/index.j
 
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "jsx-576398988" + " " + "flex flex-col h-screen lg:flex-row",
+    className: "jsx-277638355" + " " + "flex flex-col h-screen lg:flex-row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
     },
     __self: this
   }, props.children, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "576398988",
+    id: "277638355",
     __self: this
-  }, "@font-face{font-family:'Edmondsans';src:url('/static/fonts/Edmondsans-Medium.otf');font-weight:bold;font-display:auto;font-style:normal;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSzJCLEFBR2tDLHlCQUNzQiwrQ0FDOUIsaUJBQ0Msa0JBQ0Esa0JBQ2xCIiwiZmlsZSI6Ii9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBMYXlvdXQocHJvcHMpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGgtc2NyZWVuIGxnOmZsZXgtcm93XCI+XG4gICAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICAgICAgXG4gICAgICAgIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG4gICAgICAgIEBmb250LWZhY2Uge1xuICAgICAgICBmb250LWZhbWlseTogJ0VkbW9uZHNhbnMnO1xuICAgICAgICBzcmM6IHVybCgnL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLU1lZGl1bS5vdGYnKTtcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xuICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgIDwvZGl2PlxuICAgIClcbiAgfVxuICBcbiAgZXhwb3J0IGRlZmF1bHQgTGF5b3V0Il19 */\n/*@ sourceURL=/Users/sezayi/sites/goodup-landing/components/Layout/index.js */"));
+  }, "@font-face{font-family:\"Edmondsans\";src:url(\"/static/fonts/Edmondsans-Regular.otf\");font-display:auto;font-style:normal;}@font-face{font-family:\"Edmondsans-medium\";src:url(\"/static/fonts/Edmondsans-Medium.otf\");font-display:auto;font-style:normal;font-weight:500;}.font-edmondsans{font-family:\"Edmondsans\";}.font-edmondsans-medium{font-family:\"Edmondsans-medium\";}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS3lCLEFBR29DLEFBTU8sQUFPUCxBQUdPLHlCQWZnQixBQWFsRCxPQVBpRCxBQVVqRCx5Q0Fmb0IsTUFNQSxZQUxBLE1BTUEsWUFMcEIsTUFNa0IsZ0JBQ2xCIiwiZmlsZSI6Ii9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBMYXlvdXQocHJvcHMpIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgaC1zY3JlZW4gbGc6ZmxleC1yb3dcIj5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cblxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fuc1wiO1xuICAgICAgICAgIHNyYzogdXJsKFwiL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLVJlZ3VsYXIub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgIH1cbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fucy1tZWRpdW1cIjtcbiAgICAgICAgICBzcmM6IHVybChcIi9zdGF0aWMvZm9udHMvRWRtb25kc2Fucy1NZWRpdW0ub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgfVxuICAgICAgICAuZm9udC1lZG1vbmRzYW5zIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zXCI7XG4gICAgICAgIH1cbiAgICAgICAgLmZvbnQtZWRtb25kc2Fucy1tZWRpdW0ge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBcIkVkbW9uZHNhbnMtbWVkaXVtXCI7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgTGF5b3V0O1xuIl19 */\n/*@ sourceURL=/Users/sezayi/sites/goodup-landing/components/Layout/index.js */"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -215,53 +215,55 @@ function (_React$Component) {
         className: "flex-1 flex justify-center lg:items-center flex-col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "lg:w-2/4 px-16",
+        className: "lg:w-3/4 px-16",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 61
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "font-serif text-48",
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
+        className: "font-edmondsans text-action text-32 mt-48 lg:mt-0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 62
         },
         __self: this
-      }, "Download it for free"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "text-32",
+      }, "Download it for free"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
+        className: "font-edmondsans-medium text-descriptive text-48 mb-32",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 65
         },
         __self: this
-      }, " The SME purpose Ebook"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+      }, " ", "The SME purpose Ebook"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "FormFields",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "flex flex-col",
+        className: " font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "mb-8 font-edmondsans-medium",
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 71
         },
         __self: this
       }, "Full Name"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "shadow-1 appearance-none border rounded w-full py-12 px-8 focus:outline-none focus:border-action",
         ref: this.inputNameRef,
         type: "text",
         id: "name",
@@ -271,24 +273,26 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 74
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "flex flex-col",
+        className: "font-edmondsans text-descriptive flex flex-col mb-32",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "mb-8 font-edmondsans-medium",
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 86
         },
         __self: this
       }, "Your work e-mail"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "shadow-1 appearance-none border rounded w-full py-12 px-8 focus:outline-none focus:border-action",
         type: "email",
         id: "email",
         placeholder: "you@yourwork.com",
@@ -297,20 +301,20 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 89
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "",
+        className: "font-edmondsans text-descriptive mb-32",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -321,26 +325,28 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 101
         },
         __self: this
-      }), " ", "I agree to all statements in the", " ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }), " ", "I agree to all statements in the ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 108
         },
         __self: this
       }, "terms of service"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "mb-32 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 112
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+        className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 113
         },
         __self: this
       }, "Download E-book")))));
