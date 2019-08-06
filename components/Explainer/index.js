@@ -5,7 +5,7 @@ export default class Explainer extends Component {
     return (
       <div className="flex-1 background flex justify-center items-center">
         
-        <div className="flex justify-center">
+        <div className="flex justify-center p-24">
         <img
           src="/static/ebook.png"
           alt="GoodUp Ebook"

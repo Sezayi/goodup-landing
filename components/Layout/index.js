@@ -23,6 +23,10 @@ function Layout(props) {
         .font-edmondsans-medium {
           font-family: "Edmondsans-medium";
         }
+        .a {
+            text-decoration: underline;
+            color: #3C96DC;
+        }
       `}</style>
     </div>
   );
