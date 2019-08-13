@@ -14,4 +14,3 @@ const withCSS = require('@zeit/next-css')
             return config
         }
     })
-})

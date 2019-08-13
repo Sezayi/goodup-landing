@@ -1,6 +1,6 @@
 function Layout(props) {
   return (
-    <div className="flex flex-col h-screen lg:flex-row">
+    <div className="flex flex-col lg:h-screen lg:flex-row">
       {props.children}
 
       <style jsx global>{`
@@ -27,6 +27,14 @@ function Layout(props) {
             text-decoration: underline;
             color: #3C96DC;
         }
+        ::-webkit-scrollbar {
+            width: 0px;  /* Remove scrollbar space */
+            background: transparent;  /* Optional: just make scrollbar invisible */
+            -ms-overflow-style: none; /* IE 11 */
+            scrollbar-width: none; /* Firefox 64 */
+        }
+    
+        
       `}</style>
     </div>
   );

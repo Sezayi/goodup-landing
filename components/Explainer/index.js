@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Explainer extends Component {
   render() {
     return (
-      <div className="flex-1 background flex justify-center items-center">
+      <div className="flex-1 background flex justify-center items-center h-auto">
         
         <div className="flex justify-center p-24">
         <img
