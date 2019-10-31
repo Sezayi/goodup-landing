@@ -2079,68 +2079,36 @@ video {
   font-weight: 900;
 }
 
-.h-0 {
-  height: 0;
-}
-
-.h-1 {
-  height: 1px;
-}
-
-.h-2 {
-  height: 2px;
-}
-
-.h-4 {
-  height: 4px;
-}
-
-.h-8 {
+.h-sm {
   height: 8px;
 }
 
-.h-12 {
-  height: 12px;
-}
-
-.h-16 {
+.h-md {
   height: 16px;
 }
 
-.h-24 {
+.h-lg {
   height: 24px;
 }
 
-.h-32 {
-  height: 32px;
-}
-
-.h-40 {
-  height: 40px;
-}
-
-.h-48 {
+.h-xl {
   height: 48px;
 }
 
-.h-56 {
-  height: 56px;
-}
-
-.h-64 {
+.h-xxl {
   height: 64px;
 }
 
-.h-auto {
-  height: auto;
+.h-xxxl {
+  height: 400px;
 }
 
-.h-full {
-  height: 100%;
+.h-xxxxl {
+  height: 600px;
 }
 
-.h-screen {
-  height: 100vh;
+.h-xxxxxl {
+  height: 700px;
 }
 
 .leading-none {
@@ -6094,68 +6062,36 @@ video {
     font-weight: 900;
   }
 
-  .sm\:h-0 {
-    height: 0;
-  }
-
-  .sm\:h-1 {
-    height: 1px;
-  }
-
-  .sm\:h-2 {
-    height: 2px;
-  }
-
-  .sm\:h-4 {
-    height: 4px;
-  }
-
-  .sm\:h-8 {
+  .sm\:h-sm {
     height: 8px;
   }
 
-  .sm\:h-12 {
-    height: 12px;
-  }
-
-  .sm\:h-16 {
+  .sm\:h-md {
     height: 16px;
   }
 
-  .sm\:h-24 {
+  .sm\:h-lg {
     height: 24px;
   }
 
-  .sm\:h-32 {
-    height: 32px;
-  }
-
-  .sm\:h-40 {
-    height: 40px;
-  }
-
-  .sm\:h-48 {
+  .sm\:h-xl {
     height: 48px;
   }
 
-  .sm\:h-56 {
-    height: 56px;
-  }
-
-  .sm\:h-64 {
+  .sm\:h-xxl {
     height: 64px;
   }
 
-  .sm\:h-auto {
-    height: auto;
+  .sm\:h-xxxl {
+    height: 400px;
   }
 
-  .sm\:h-full {
-    height: 100%;
+  .sm\:h-xxxxl {
+    height: 600px;
   }
 
-  .sm\:h-screen {
-    height: 100vh;
+  .sm\:h-xxxxxl {
+    height: 700px;
   }
 
   .sm\:leading-none {
@@ -10108,68 +10044,36 @@ video {
     font-weight: 900;
   }
 
-  .md\:h-0 {
-    height: 0;
-  }
-
-  .md\:h-1 {
-    height: 1px;
-  }
-
-  .md\:h-2 {
-    height: 2px;
-  }
-
-  .md\:h-4 {
-    height: 4px;
-  }
-
-  .md\:h-8 {
+  .md\:h-sm {
     height: 8px;
   }
 
-  .md\:h-12 {
-    height: 12px;
-  }
-
-  .md\:h-16 {
+  .md\:h-md {
     height: 16px;
   }
 
-  .md\:h-24 {
+  .md\:h-lg {
     height: 24px;
   }
 
-  .md\:h-32 {
-    height: 32px;
-  }
-
-  .md\:h-40 {
-    height: 40px;
-  }
-
-  .md\:h-48 {
+  .md\:h-xl {
     height: 48px;
   }
 
-  .md\:h-56 {
-    height: 56px;
-  }
-
-  .md\:h-64 {
+  .md\:h-xxl {
     height: 64px;
   }
 
-  .md\:h-auto {
-    height: auto;
+  .md\:h-xxxl {
+    height: 400px;
   }
 
-  .md\:h-full {
-    height: 100%;
+  .md\:h-xxxxl {
+    height: 600px;
   }
 
-  .md\:h-screen {
-    height: 100vh;
+  .md\:h-xxxxxl {
+    height: 700px;
   }
 
   .md\:leading-none {
@@ -14122,68 +14026,36 @@ video {
     font-weight: 900;
   }
 
-  .lg\:h-0 {
-    height: 0;
-  }
-
-  .lg\:h-1 {
-    height: 1px;
-  }
-
-  .lg\:h-2 {
-    height: 2px;
-  }
-
-  .lg\:h-4 {
-    height: 4px;
-  }
-
-  .lg\:h-8 {
+  .lg\:h-sm {
     height: 8px;
   }
 
-  .lg\:h-12 {
-    height: 12px;
-  }
-
-  .lg\:h-16 {
+  .lg\:h-md {
     height: 16px;
   }
 
-  .lg\:h-24 {
+  .lg\:h-lg {
     height: 24px;
   }
 
-  .lg\:h-32 {
-    height: 32px;
-  }
-
-  .lg\:h-40 {
-    height: 40px;
-  }
-
-  .lg\:h-48 {
+  .lg\:h-xl {
     height: 48px;
   }
 
-  .lg\:h-56 {
-    height: 56px;
-  }
-
-  .lg\:h-64 {
+  .lg\:h-xxl {
     height: 64px;
   }
 
-  .lg\:h-auto {
-    height: auto;
+  .lg\:h-xxxl {
+    height: 400px;
   }
 
-  .lg\:h-full {
-    height: 100%;
+  .lg\:h-xxxxl {
+    height: 600px;
   }
 
-  .lg\:h-screen {
-    height: 100vh;
+  .lg\:h-xxxxxl {
+    height: 700px;
   }
 
   .lg\:leading-none {
@@ -18136,68 +18008,36 @@ video {
     font-weight: 900;
   }
 
-  .xl\:h-0 {
-    height: 0;
-  }
-
-  .xl\:h-1 {
-    height: 1px;
-  }
-
-  .xl\:h-2 {
-    height: 2px;
-  }
-
-  .xl\:h-4 {
-    height: 4px;
-  }
-
-  .xl\:h-8 {
+  .xl\:h-sm {
     height: 8px;
   }
 
-  .xl\:h-12 {
-    height: 12px;
-  }
-
-  .xl\:h-16 {
+  .xl\:h-md {
     height: 16px;
   }
 
-  .xl\:h-24 {
+  .xl\:h-lg {
     height: 24px;
   }
 
-  .xl\:h-32 {
-    height: 32px;
-  }
-
-  .xl\:h-40 {
-    height: 40px;
-  }
-
-  .xl\:h-48 {
+  .xl\:h-xl {
     height: 48px;
   }
 
-  .xl\:h-56 {
-    height: 56px;
-  }
-
-  .xl\:h-64 {
+  .xl\:h-xxl {
     height: 64px;
   }
 
-  .xl\:h-auto {
-    height: auto;
+  .xl\:h-xxxl {
+    height: 400px;
   }
 
-  .xl\:h-full {
-    height: 100%;
+  .xl\:h-xxxxl {
+    height: 600px;
   }
 
-  .xl\:h-screen {
-    height: 100vh;
+  .xl\:h-xxxxxl {
+    height: 700px;
   }
 
   .xl\:leading-none {

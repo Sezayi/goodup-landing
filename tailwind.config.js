@@ -32,6 +32,16 @@ module.exports = {
       whatsapp: "#65BC54",
       email: "#6D6E70"
     },
+    height: {
+      sm: '8px',
+      md: '16px',
+      lg: '24px',
+      xl: '48px',
+      xxl: '64px',
+      xxxl: '400px',
+      xxxxl: '600px',
+      xxxxxl: '700px'
+    },
     fontSize: {
       "12": "12px",
       "14": "14px",

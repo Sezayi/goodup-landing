@@ -33,8 +33,6 @@ function Layout(props) {
             -ms-overflow-style: none; /* IE 11 */
             scrollbar-width: none; /* Firefox 64 */
         }
-    
-        
       `}</style>
     </div>
   );
