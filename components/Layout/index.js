@@ -1,6 +1,6 @@
 function Layout(props) {
   return (
-    <div className="flex flex-col lg:h-screen lg:flex-row">
+    <div className="flex flex-col lg:h-full lg:flex-row height">
       {props.children}
 
       <style jsx global>{`
@@ -32,6 +32,9 @@ function Layout(props) {
             background: transparent;  /* Optional: just make scrollbar invisible */
             -ms-overflow-style: none; /* IE 11 */
             scrollbar-width: none; /* Firefox 64 */
+        }
+        .height {
+          height: 100vh;
         }
       `}</style>
     </div>
