@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -263,345 +263,98 @@ function Layout(props) {
 
 /***/ }),
 
-/***/ "./components/Signup/index.js":
-/*!************************************!*\
-  !*** ./components/Signup/index.js ***!
-  \************************************/
+/***/ "./components/Thankyou/index.js":
+/*!**************************************!*\
+  !*** ./components/Thankyou/index.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return thankyou; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Signup/index.js";
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-spring */ "react-spring");
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_spring__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Thankyou/index.js";
 
 
 
-const firebase = __webpack_require__(/*! ../../node_modules/firebase */ "./node_modules/firebase/dist/index.node.cjs.js");
-
-const firebaseConfig = __webpack_require__(/*! ../../fire */ "./fire.js");
-
-class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-
-    if (!firebase.apps.length) {
-      try {
-        firebase.initializeApp(firebaseConfig);
-      } catch (err) {
-        console.error("Firebase initialization error raised", err.stack);
+function thankyou() {
+  const props = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])({
+    from: {
+      left: '0%',
+      top: '50%',
+      width: '50%',
+      height: '100%',
+      background: '#fff'
+    },
+    to: async next => {
+      while (1) {
+        await next({
+          left: '0%',
+          top: '50%',
+          width: '100%',
+          height: '100%',
+          background: '#fff'
+        });
       }
     }
-
-    this.state = {
-      email: "",
-      company: "",
-      name: "",
-      hasAgreed: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.inputNameRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-  }
-
-  handleChange(e) {
-    let target = e.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const usersRef = firebase.database().ref("users");
-    const user = {
-      email: this.state.email,
-      company: this.state.company,
-      name: this.state.name
-    };
-    usersRef.push(user, () => {
-      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
-        pathname: '/thankyou'
-      });
-    });
-    this.setState({
-      email: "",
-      company: "",
-      name: ""
-    });
-  }
-
-  componentDidMount() {
-    this.inputNameRef.current.focus();
-  }
-
-  render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "flex-1 flex justify-center lg:items-center flex-col",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-      className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
-    }, "Download it for free"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      className: "font-edmondsans-medium text-descriptive text-40 mb-32",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
-    }, " ", "The complete guide to become a purpose driven company"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-      onSubmit: this.handleSubmit,
-      className: "FormFields",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: " font-edmondsans text-descriptive flex flex-col mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "name",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76
-      },
-      __self: this
-    }, "Full Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      ref: this.inputNameRef,
-      type: "text",
-      id: "name",
-      placeholder: "First Lastname",
-      name: "name",
-      required: true,
-      value: this.state.name,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: " font-edmondsans text-descriptive flex flex-col mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "company",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, "Your company name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      type: "text",
-      id: "company",
-      required: true,
-      placeholder: "i.e. The Good Company",
-      name: "company",
-      value: this.state.company,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95
-      },
-      __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "font-edmondsans text-descriptive flex flex-col mb-32",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "name",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 107
-      },
-      __self: this
-    }, "Work e-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      className: "shadow-1 appearance-none border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      type: "email",
-      id: "email",
-      required: true,
-      placeholder: "you@yourwork.com",
-      name: "email",
-      value: this.state.email,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 110
-      },
-      __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "font-edmondsans text-descriptive mb-32",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 121
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 122
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      type: "checkbox",
-      name: "hasAgreed",
-      required: true,
-      value: this.state.hasAgreed,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 123
-      },
-      __self: this
-    }), " ", "I agree to all statements in the ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "underline",
-      href: "",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 130
-      },
-      __self: this
-    }, "terms of service"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "mb-32",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 134
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 135
-      },
-      __self: this
-    }, "Download E-book")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "font-edmondsans text-descriptive",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 139
-      },
-      __self: this
-    }, "Learn more about purpose on  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "text-action hover:underline",
-      href: "https://www.goodup.com",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 139
-      },
-      __self: this
-    }, "www.goodup.com")))));
-  }
-
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+    className: "flex justify-center items-center",
+    style: props,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col justify-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "font-edmondsans-medium text-24 text-center lg:text-48 text-descriptive",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "Enjoy\xA0the\xA0read!"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "font-edmondsans text-16 text-center lg:text-32 text-descriptive",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Your\xA0ebook\xA0is\xA0being delivered\xA0to\xA0your\xA0inbox."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "self-center mt-40 sm:w-1/2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "",
+    src: "../../static/beamup.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }))));
 }
 
 /***/ }),
 
-/***/ "./fire.js":
-/*!*****************!*\
-  !*** ./fire.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Your web app's Firebase configuration
-module.exports = {
-  apiKey: "AIzaSyDQlA5o4mFhGxG90gFJrZYADDlSI6QO_Wk",
-  authDomain: "conversion-landingpage.firebaseapp.com",
-  databaseURL: "https://conversion-landingpage.firebaseio.com",
-  projectId: "conversion-landingpage",
-  storageBucket: "",
-  messagingSenderId: "587238548039",
-  appId: "1:587238548039:web:8d7fb89f075322bf"
-};
-
-/***/ }),
-
-/***/ "./node_modules/firebase/dist/index.node.cjs.js":
-/*!******************************************************!*\
-  !*** ./node_modules/firebase/dist/index.node.cjs.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "@firebase/app"));
-__webpack_require__(/*! @firebase/auth */ "@firebase/auth");
-__webpack_require__(/*! @firebase/database */ "@firebase/database");
-__webpack_require__(/*! @firebase/firestore */ "@firebase/firestore");
-__webpack_require__(/*! @firebase/functions */ "@firebase/functions");
-
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-module.exports = firebase;
-//# sourceMappingURL=index.node.cjs.js.map
-
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/thankyou.js":
+/*!***************************!*\
+  !*** ./pages/thankyou.js ***!
+  \***************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -611,48 +364,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.css */ "./styles/index.css");
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Signup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Signup */ "./components/Signup/index.js");
-/* harmony import */ var _components_Explainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Explainer */ "./components/Explainer/index.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Explainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Explainer */ "./components/Explainer/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Thankyou__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Thankyou */ "./components/Thankyou/index.js");
 /* harmony import */ var _components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GaWrapper */ "./components/GaWrapper/index.js");
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
+var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/thankyou.js";
 
 
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (() => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+/* harmony default export */ __webpack_exports__["default"] = (() => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 8
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 9
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Explainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 10
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Explainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Thankyou__WEBPACK_IMPORTED_MODULE_4__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 11
   },
   __self: undefined
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signup__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-})))));
+}))));
 
 /***/ }),
 
@@ -667,81 +414,15 @@ var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 5:
+/*!*********************************!*\
+  !*** multi ./pages/thankyou.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/thankyou.js */"./pages/thankyou.js");
 
-
-/***/ }),
-
-/***/ "@firebase/app":
-/*!********************************!*\
-  !*** external "@firebase/app" ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/app");
-
-/***/ }),
-
-/***/ "@firebase/auth":
-/*!*********************************!*\
-  !*** external "@firebase/auth" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/auth");
-
-/***/ }),
-
-/***/ "@firebase/database":
-/*!*************************************!*\
-  !*** external "@firebase/database" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/database");
-
-/***/ }),
-
-/***/ "@firebase/firestore":
-/*!**************************************!*\
-  !*** external "@firebase/firestore" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/firestore");
-
-/***/ }),
-
-/***/ "@firebase/functions":
-/*!**************************************!*\
-  !*** external "@firebase/functions" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/functions");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 
@@ -790,4 +471,4 @@ module.exports = require("styled-jsx/style");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=thankyou.js.map

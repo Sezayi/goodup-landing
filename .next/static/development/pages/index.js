@@ -56,7 +56,7 @@ function Explainer() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"].div, {
-    className: "w-1/2 h-xxxl lg:h-xxxxxl bg-grey image",
+    className: "w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
     onMouseMove: function onMouseMove(_ref) {
       var x = _ref.clientX,
           y = _ref.clientY;

@@ -17,7 +17,7 @@ function Explainer() {
   return (
     <div className="flex flex-1 bg-descriptive justify-center items-center h-screen">
         <animated.div
-          className="w-1/2 h-xxxl lg:h-xxxxxl bg-grey image"
+          className="w-1/2 h-xxxl lg:h-xxxxl bg-grey image"
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={style}
