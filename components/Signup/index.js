@@ -46,13 +46,13 @@ export default class Signup extends React.Component {
       company: this.state.company,
       name: this.state.name
     };
-    usersRef.push(user, () => {
-      Router.push({pathname: '/thankyou'})
-    });
     this.setState({
       email: "",
       company: "",
       name: ""
+    });
+    usersRef.push(user, () => {
+      Router.push({pathname: '/thankyou'})
     });
   }
 

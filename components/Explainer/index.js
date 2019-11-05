@@ -14,6 +14,7 @@ function Explainer() {
     backgroundPosition: 'center center',
     boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)',
   }
+
   return (
     <div className="flex flex-1 bg-descriptive justify-center items-center h-screen">
         <animated.div

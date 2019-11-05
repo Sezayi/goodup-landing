@@ -134,7 +134,7 @@ function Explainer() {
     className: "flex flex-1 bg-descriptive justify-center items-center h-screen",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
@@ -151,7 +151,7 @@ function Explainer() {
     style: style,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }));
@@ -325,15 +325,15 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       company: this.state.company,
       name: this.state.name
     };
-    usersRef.push(user, () => {
-      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
-        pathname: '/thankyou'
-      });
-    });
     this.setState({
       email: "",
       company: "",
       name: ""
+    });
+    usersRef.push(user, () => {
+      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
+        pathname: '/thankyou'
+      });
     });
   }
 

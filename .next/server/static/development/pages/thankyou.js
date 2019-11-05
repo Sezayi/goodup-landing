@@ -134,7 +134,7 @@ function Explainer() {
     className: "flex flex-1 bg-descriptive justify-center items-center h-screen",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
@@ -151,7 +151,7 @@ function Explainer() {
     style: style,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }));
@@ -280,7 +280,6 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Thankyou/index.js";
 
 
-
 function thankyou() {
   const props = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])({
     from: {
@@ -302,40 +301,50 @@ function thankyou() {
       }
     }
   });
+  const delay = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    },
+    delay: 300
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
     className: "flex justify-center items-center",
     style: props,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-col justify-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "font-edmondsans-medium text-24 text-center lg:text-48 text-descriptive",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 19
     },
     __self: this
   }, "Enjoy\xA0the\xA0read!"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "font-edmondsans text-16 text-center lg:text-32 text-descriptive",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
-  }, "Your\xA0ebook\xA0is\xA0being delivered\xA0to\xA0your\xA0inbox."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Your\xA0ebook\xA0is\xA0being delivered\xA0to\xA0your\xA0inbox."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
     className: "self-center mt-40 sm:w-1/2",
+    style: delay,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -343,7 +352,7 @@ function thankyou() {
     src: "../../static/beamup.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: this
   }))));
