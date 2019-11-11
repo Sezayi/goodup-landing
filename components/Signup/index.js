@@ -67,9 +67,9 @@ export default class Signup extends React.Component {
           <h2 className="font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0">
             Download it for free
           </h2>
-          <h1 className="font-edmondsans-medium text-descriptive text-40 mb-32">
+          <h1 className="font-edmondsans-medium text-descriptive text-32 mb-32">
             {" "}
-            The complete guide to become a purpose driven company
+            The complete guide to activate employees and embed purpose in your organisation
           </h1>
           <form onSubmit={this.handleSubmit} className="FormFields">
             <div className=" font-edmondsans text-descriptive flex flex-col mb-24">

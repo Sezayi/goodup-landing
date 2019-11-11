@@ -43,7 +43,7 @@ function Explainer() {
 
   var style = {
     transform: props.xys.interpolate(trans),
-    backgroundImage: "url(http://www.coppersunbooks.com/wp-content/uploads/2018/09/Purpose-eBook-Cover.jpg",
+    backgroundImage: "url(/static/GPTW-Ebook-cover.png",
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)'
@@ -56,7 +56,7 @@ function Explainer() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"].div, {
-    className: "w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
+    className: "w-2/3 lgg:w2/3 xl:w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
     onMouseMove: function onMouseMove(_ref) {
       var x = _ref.clientX,
           y = _ref.clientY;
@@ -9395,7 +9395,7 @@ var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/thankyou.js";
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fthankyou&absolutePagePath=%2FUsers%2Fsezayi%2Fsites%2Fgoodup-landing%2Fpages%2Fthankyou.js ***!
   \*****************************************************************************************************************************************/
@@ -9418,5 +9418,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=thankyou.js.map

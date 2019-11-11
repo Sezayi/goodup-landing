@@ -40,7 +40,7 @@ module.exports = {
       xxl: '64px',
       xxxl: '400px',
       xxxxl: '640px',
-      xxxxxl: '700px'
+      xxxxxl: '960px'
     },
     fontSize: {
       "12": "12px",
@@ -58,7 +58,8 @@ module.exports = {
       sm: "320px",
       md: "530px",
       lg: "768px",
-      xl: "960px"
+      lgg: "1024px",
+      xl: "1500px"
     },
     boxShadow: {
       none: "none",

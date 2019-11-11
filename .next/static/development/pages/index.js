@@ -43,7 +43,7 @@ function Explainer() {
 
   var style = {
     transform: props.xys.interpolate(trans),
-    backgroundImage: "url(http://www.coppersunbooks.com/wp-content/uploads/2018/09/Purpose-eBook-Cover.jpg",
+    backgroundImage: "url(/static/GPTW-Ebook-cover.png",
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)'
@@ -56,7 +56,7 @@ function Explainer() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"].div, {
-    className: "w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
+    className: "w-2/3 lgg:w2/3 xl:w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
     onMouseMove: function onMouseMove(_ref) {
       var x = _ref.clientX,
           y = _ref.clientY;
@@ -338,13 +338,13 @@ function (_React$Component) {
         },
         __self: this
       }, "Download it for free"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
-        className: "font-edmondsans-medium text-descriptive text-40 mb-32",
+        className: "font-edmondsans-medium text-descriptive text-32 mb-32",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 70
         },
         __self: this
-      }, " ", "The complete guide to become a purpose driven company"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+      }, " ", "The complete guide to activate employees and embed purpose in your organisation"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "FormFields",
         __source: {
