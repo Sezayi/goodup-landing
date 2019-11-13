@@ -30,9 +30,9 @@
 
 #include "src/core/lib/channel/channelz_registry.h"
 #include "src/core/lib/channel/status_util.h"
+#include "src/core/lib/gpr/host_port.h"
 #include "src/core/lib/gpr/string.h"
 #include "src/core/lib/gpr/useful.h"
-#include "src/core/lib/gprpp/host_port.h"
 #include "src/core/lib/gprpp/memory.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
@@ -85,8 +85,7 @@ intptr_t GetParentUuidFromArgs(const grpc_channel_args& args) {
 // BaseNode
 //
 
-BaseNode::BaseNode(EntityType type, UniquePtr<char> name)
-    : type_(type), uuid_(-1), name_(std::move(name)) {
+BaseNode::BaseNode(EntityType type) : type_(type), uuid_(-1) {
   // The registry will set uuid_ under its lock.
   ChannelzRegistry::Register(this);
 }
@@ -188,28 +187,10 @@ void CallCountingHelper::PopulateCallCounts(grpc_json* json) {
 ChannelNode::ChannelNode(UniquePtr<char> target,
                          size_t channel_tracer_max_nodes, intptr_t parent_uuid)
     : BaseNode(parent_uuid == 0 ? EntityType::kTopLevelChannel
-                                : EntityType::kInternalChannel,
-               UniquePtr<char>(gpr_strdup(target.get()))),
+                                : EntityType::kInternalChannel),
       target_(std::move(target)),
       trace_(channel_tracer_max_nodes),
       parent_uuid_(parent_uuid) {}
-
-const char* ChannelNode::GetChannelConnectivityStateChangeString(
-    grpc_connectivity_state state) {
-  switch (state) {
-    case GRPC_CHANNEL_IDLE:
-      return "Channel state change to IDLE";
-    case GRPC_CHANNEL_CONNECTING:
-      return "Channel state change to CONNECTING";
-    case GRPC_CHANNEL_READY:
-      return "Channel state change to READY";
-    case GRPC_CHANNEL_TRANSIENT_FAILURE:
-      return "Channel state change to TRANSIENT_FAILURE";
-    case GRPC_CHANNEL_SHUTDOWN:
-      return "Channel state change to SHUTDOWN";
-  }
-  GPR_UNREACHABLE_CODE(return "UNKNOWN");
-}
 
 grpc_json* ChannelNode::RenderJson() {
   // We need to track these three json objects to build our object
@@ -322,57 +303,37 @@ void ChannelNode::RemoveChildSubchannel(intptr_t child_uuid) {
 //
 
 ServerNode::ServerNode(grpc_server* server, size_t channel_tracer_max_nodes)
-    : BaseNode(EntityType::kServer, /* name */ nullptr),
+    : BaseNode(EntityType::kServer),
+      server_(server),
       trace_(channel_tracer_max_nodes) {}
 
 ServerNode::~ServerNode() {}
 
-void ServerNode::AddChildSocket(RefCountedPtr<SocketNode> node) {
-  MutexLock lock(&child_mu_);
-  child_sockets_.insert(MakePair(node->uuid(), std::move(node)));
-}
-
-void ServerNode::RemoveChildSocket(intptr_t child_uuid) {
-  MutexLock lock(&child_mu_);
-  child_sockets_.erase(child_uuid);
-}
-
-void ServerNode::AddChildListenSocket(RefCountedPtr<ListenSocketNode> node) {
-  MutexLock lock(&child_mu_);
-  child_listen_sockets_.insert(MakePair(node->uuid(), std::move(node)));
-}
-
-void ServerNode::RemoveChildListenSocket(intptr_t child_uuid) {
-  MutexLock lock(&child_mu_);
-  child_listen_sockets_.erase(child_uuid);
-}
-
 char* ServerNode::RenderServerSockets(intptr_t start_socket_id,
                                       intptr_t max_results) {
-  // If user does not set max_results, we choose 500.
+  // if user does not set max_results, we choose 500.
   size_t pagination_limit = max_results == 0 ? 500 : max_results;
   grpc_json* top_level_json = grpc_json_create(GRPC_JSON_OBJECT);
   grpc_json* json = top_level_json;
   grpc_json* json_iterator = nullptr;
-  MutexLock lock(&child_mu_);
-  size_t sockets_rendered = 0;
-  if (!child_sockets_.empty()) {
-    // Create list of socket refs
+  ChildSocketsList socket_refs;
+  grpc_server_populate_server_sockets(server_, &socket_refs, start_socket_id);
+  // declared early so it can be used outside of the loop.
+  size_t i = 0;
+  if (!socket_refs.empty()) {
+    // create list of socket refs
     grpc_json* array_parent = grpc_json_create_child(
         nullptr, json, "socketRef", nullptr, GRPC_JSON_ARRAY, false);
-    const size_t limit = GPR_MIN(child_sockets_.size(), pagination_limit);
-    for (auto it = child_sockets_.lower_bound(start_socket_id);
-         it != child_sockets_.end() && sockets_rendered < limit;
-         ++it, ++sockets_rendered) {
+    for (i = 0; i < GPR_MIN(socket_refs.size(), pagination_limit); ++i) {
       grpc_json* socket_ref_json = grpc_json_create_child(
           nullptr, array_parent, nullptr, nullptr, GRPC_JSON_OBJECT, false);
       json_iterator = grpc_json_add_number_string_child(
-          socket_ref_json, nullptr, "socketId", it->first);
+          socket_ref_json, nullptr, "socketId", socket_refs[i]->uuid());
       grpc_json_create_child(json_iterator, socket_ref_json, "name",
-                             it->second->name(), GRPC_JSON_STRING, false);
+                             socket_refs[i]->remote(), GRPC_JSON_STRING, false);
     }
   }
-  if (sockets_rendered == child_sockets_.size()) {
+  if (i == socket_refs.size()) {
     json_iterator = grpc_json_create_child(nullptr, json, "end", nullptr,
                                            GRPC_JSON_TRUE, false);
   }
@@ -410,19 +371,17 @@ grpc_json* ServerNode::RenderJson() {
   // ask CallCountingHelper to populate trace and call count data.
   call_counter_.PopulateCallCounts(json);
   json = top_level_json;
-  // Render listen sockets
-  MutexLock lock(&child_mu_);
-  if (!child_listen_sockets_.empty()) {
+  ChildRefsList listen_sockets;
+  grpc_server_populate_listen_sockets(server_, &listen_sockets);
+  if (!listen_sockets.empty()) {
     grpc_json* array_parent = grpc_json_create_child(
         nullptr, json, "listenSocket", nullptr, GRPC_JSON_ARRAY, false);
-    for (const auto& it : child_listen_sockets_) {
+    for (size_t i = 0; i < listen_sockets.size(); ++i) {
       json_iterator =
           grpc_json_create_child(json_iterator, array_parent, nullptr, nullptr,
                                  GRPC_JSON_OBJECT, false);
-      grpc_json* sibling_iterator = grpc_json_add_number_string_child(
-          json_iterator, nullptr, "socketId", it.first);
-      grpc_json_create_child(sibling_iterator, json_iterator, "name",
-                             it.second->name(), GRPC_JSON_STRING, false);
+      grpc_json_add_number_string_child(json_iterator, nullptr, "socketId",
+                                        listen_sockets[i]);
     }
   }
   return top_level_json;
@@ -447,15 +406,14 @@ void PopulateSocketAddressJson(grpc_json* json, const char* name,
                            (strcmp(uri->scheme, "ipv6") == 0))) {
     const char* host_port = uri->path;
     if (*host_port == '/') ++host_port;
-    UniquePtr<char> host;
-    UniquePtr<char> port;
-    GPR_ASSERT(SplitHostPort(host_port, &host, &port));
+    char* host = nullptr;
+    char* port = nullptr;
+    GPR_ASSERT(gpr_split_host_port(host_port, &host, &port));
     int port_num = -1;
     if (port != nullptr) {
-      port_num = atoi(port.get());
+      port_num = atoi(port);
     }
-    char* b64_host =
-        grpc_base64_encode(host.get(), strlen(host.get()), false, false);
+    char* b64_host = grpc_base64_encode(host, strlen(host), false, false);
     json_iterator = grpc_json_create_child(json_iterator, json, "tcpip_address",
                                            nullptr, GRPC_JSON_OBJECT, false);
     json = json_iterator;
@@ -464,6 +422,8 @@ void PopulateSocketAddressJson(grpc_json* json, const char* name,
                                                       "port", port_num);
     json_iterator = grpc_json_create_child(json_iterator, json, "ip_address",
                                            b64_host, GRPC_JSON_STRING, true);
+    gpr_free(host);
+    gpr_free(port);
   } else if (uri != nullptr && strcmp(uri->scheme, "unix") == 0) {
     json_iterator = grpc_json_create_child(json_iterator, json, "uds_address",
                                            nullptr, GRPC_JSON_OBJECT, false);
@@ -485,9 +445,8 @@ void PopulateSocketAddressJson(grpc_json* json, const char* name,
 
 }  // namespace
 
-SocketNode::SocketNode(UniquePtr<char> local, UniquePtr<char> remote,
-                       UniquePtr<char> name)
-    : BaseNode(EntityType::kSocket, std::move(name)),
+SocketNode::SocketNode(UniquePtr<char> local, UniquePtr<char> remote)
+    : BaseNode(EntityType::kSocket),
       local_(std::move(local)),
       remote_(std::move(remote)) {}
 
@@ -527,8 +486,6 @@ grpc_json* SocketNode::RenderJson() {
   json_iterator = nullptr;
   json_iterator = grpc_json_add_number_string_child(json, json_iterator,
                                                     "socketId", uuid());
-  json_iterator = grpc_json_create_child(json_iterator, json, "name", name(),
-                                         GRPC_JSON_STRING, false);
   json = top_level_json;
   PopulateSocketAddressJson(json, "remote", remote_.get());
   PopulateSocketAddressJson(json, "local", local_.get());
@@ -608,10 +565,8 @@ grpc_json* SocketNode::RenderJson() {
 // ListenSocketNode
 //
 
-ListenSocketNode::ListenSocketNode(UniquePtr<char> local_addr,
-                                   UniquePtr<char> name)
-    : BaseNode(EntityType::kSocket, std::move(name)),
-      local_addr_(std::move(local_addr)) {}
+ListenSocketNode::ListenSocketNode(UniquePtr<char> local_addr)
+    : BaseNode(EntityType::kSocket), local_addr_(std::move(local_addr)) {}
 
 grpc_json* ListenSocketNode::RenderJson() {
   // We need to track these three json objects to build our object
@@ -625,8 +580,6 @@ grpc_json* ListenSocketNode::RenderJson() {
   json_iterator = nullptr;
   json_iterator = grpc_json_add_number_string_child(json, json_iterator,
                                                     "socketId", uuid());
-  json_iterator = grpc_json_create_child(json_iterator, json, "name", name(),
-                                         GRPC_JSON_STRING, false);
   json = top_level_json;
   PopulateSocketAddressJson(json, "local", local_addr_.get());
 

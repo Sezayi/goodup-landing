@@ -1,4 +1,9 @@
-const withCSS = require('@zeit/next-css')
+//  // next.config.js
+//  const withImages = require('next-images')
+//  module.exports = withImages()
+ 
+ 
+ const withCSS = require('@zeit/next-css')
     module.exports = withCSS({
         webpack: function (config) {
             config.module.rules.push({
@@ -14,3 +19,5 @@ const withCSS = require('@zeit/next-css')
             return config
         }
     })
+
+

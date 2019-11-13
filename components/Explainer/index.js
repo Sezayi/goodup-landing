@@ -8,21 +8,24 @@ import React from "react";
 
 function Explainer() {
   // // const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 250, friction: 40 } }))
-  const style = {
-    // transform: props.xys.interpolate(trans),
-    backgroundImage: "url(/static/ebook-cover.png",
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)',
-  }
+  // const style = {
+  //   // transform: props.xys.interpolate(trans),
+  //   backgroundImage: "url(/static/ebook-cover.png",
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center center',
+  //   boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)',
+  // }
+
+  
 
   return (
     <div className="flex flex-1 bg-descriptive justify-center items-center h-screen">
-       <div className="w-2/3 lgg:w2/3 xl:w-1/2 h-xxxl lg:h-xxxxl bg-grey" style={style}></div>
-       
+       <div className="w-2/3 lgg:w2/3 xl:w-1/2 h-auto lg:h-xxxxl">
+       <img src="/static/ebook-cover.png"/>
+       </div>
         {/* <animated.div
           
-          onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+          onMouseMove={({ clientX: x, client Y: y }) => set({ xys: calc(x, y) })}
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={style}
         /> */}

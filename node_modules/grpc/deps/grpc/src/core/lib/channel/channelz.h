@@ -58,8 +58,13 @@ namespace channelz {
 grpc_arg MakeParentUuidArg(intptr_t parent_uuid);
 intptr_t GetParentUuidFromArgs(const grpc_channel_args& args);
 
+// TODO(ncteisen), this only contains the uuids of the children for now,
+// since that is all that is strictly needed. In a future enhancement we will
+// add human readable names as in the channelz.proto
+typedef InlinedVector<intptr_t, 10> ChildRefsList;
+
 class SocketNode;
-class ListenSocketNode;
+typedef InlinedVector<SocketNode*, 10> ChildSocketsList;
 
 namespace testing {
 class CallCountingHelperPeer;
@@ -80,7 +85,7 @@ class BaseNode : public RefCounted<BaseNode> {
     kSocket,
   };
 
-  BaseNode(EntityType type, UniquePtr<char> name);
+  explicit BaseNode(EntityType type);
   virtual ~BaseNode();
 
   // All children must implement this function.
@@ -92,14 +97,12 @@ class BaseNode : public RefCounted<BaseNode> {
 
   EntityType type() const { return type_; }
   intptr_t uuid() const { return uuid_; }
-  const char* name() const { return name_.get(); }
 
  private:
   // to allow the ChannelzRegistry to set uuid_ under its lock.
   friend class ChannelzRegistry;
   const EntityType type_;
   intptr_t uuid_;
-  UniquePtr<char> name_;
 };
 
 // This class is a helper class for channelz entities that deal with Channels,
@@ -151,10 +154,6 @@ class ChannelNode : public BaseNode {
   ChannelNode(UniquePtr<char> target, size_t channel_tracer_max_nodes,
               intptr_t parent_uuid);
 
-  // Returns the string description of the given connectivity state.
-  static const char* GetChannelConnectivityStateChangeString(
-      grpc_connectivity_state state);
-
   intptr_t parent_uuid() const { return parent_uuid_; }
 
   grpc_json* RenderJson() override;
@@ -175,13 +174,9 @@ class ChannelNode : public BaseNode {
 
   void SetConnectivityState(grpc_connectivity_state state);
 
-  // TODO(roth): take in a RefCountedPtr to the child channel so we can retrieve
-  // the human-readable name.
   void AddChildChannel(intptr_t child_uuid);
   void RemoveChildChannel(intptr_t child_uuid);
 
-  // TODO(roth): take in a RefCountedPtr to the child subchannel so we can
-  // retrieve the human-readable name.
   void AddChildSubchannel(intptr_t child_uuid);
   void RemoveChildSubchannel(intptr_t child_uuid);
 
@@ -212,20 +207,12 @@ class ChannelNode : public BaseNode {
 class ServerNode : public BaseNode {
  public:
   ServerNode(grpc_server* server, size_t channel_tracer_max_nodes);
-
   ~ServerNode() override;
 
   grpc_json* RenderJson() override;
 
-  char* RenderServerSockets(intptr_t start_socket_id, intptr_t max_results);
-
-  void AddChildSocket(RefCountedPtr<SocketNode> node);
-
-  void RemoveChildSocket(intptr_t child_uuid);
-
-  void AddChildListenSocket(RefCountedPtr<ListenSocketNode> node);
-
-  void RemoveChildListenSocket(intptr_t child_uuid);
+  char* RenderServerSockets(intptr_t start_socket_id,
+                            intptr_t pagination_limit);
 
   // proxy methods to composed classes.
   void AddTraceEvent(ChannelTrace::Severity severity, const grpc_slice& data) {
@@ -242,18 +229,15 @@ class ServerNode : public BaseNode {
   void RecordCallSucceeded() { call_counter_.RecordCallSucceeded(); }
 
  private:
+  grpc_server* server_;
   CallCountingHelper call_counter_;
   ChannelTrace trace_;
-  Mutex child_mu_;  // Guards child maps below.
-  Map<intptr_t, RefCountedPtr<SocketNode>> child_sockets_;
-  Map<intptr_t, RefCountedPtr<ListenSocketNode>> child_listen_sockets_;
 };
 
 // Handles channelz bookkeeping for sockets
 class SocketNode : public BaseNode {
  public:
-  SocketNode(UniquePtr<char> local, UniquePtr<char> remote,
-             UniquePtr<char> name);
+  SocketNode(UniquePtr<char> local, UniquePtr<char> remote);
   ~SocketNode() override {}
 
   grpc_json* RenderJson() override;
@@ -292,7 +276,8 @@ class SocketNode : public BaseNode {
 // Handles channelz bookkeeping for listen sockets
 class ListenSocketNode : public BaseNode {
  public:
-  ListenSocketNode(UniquePtr<char> local_addr, UniquePtr<char> name);
+  // ListenSocketNode takes ownership of host.
+  explicit ListenSocketNode(UniquePtr<char> local_addr);
   ~ListenSocketNode() override {}
 
   grpc_json* RenderJson() override;

@@ -84,6 +84,7 @@
 #include "src/core/lib/backoff/backoff.h"
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/channel/channel_stack.h"
+#include "src/core/lib/gpr/host_port.h"
 #include "src/core/lib/gpr/string.h"
 #include "src/core/lib/gprpp/manual_constructor.h"
 #include "src/core/lib/gprpp/map.h"
@@ -184,7 +185,9 @@ class XdsLb : public LoadBalancingPolicy {
       bool seen_initial_response() const { return seen_initial_response_; }
 
      private:
-      GRPC_ALLOW_CLASS_TO_USE_NON_PUBLIC_DELETE
+      // So Delete() can access our private dtor.
+      template <typename T>
+      friend void grpc_core::Delete(T*);
 
       ~BalancerCallState();
 
@@ -567,7 +570,7 @@ XdsLb::PickResult XdsLb::Picker::Pick(PickArgs args) {
   PickResult result = PickFromLocality(key, args);
   // If pick succeeded, add client stats.
   if (result.type == PickResult::PICK_COMPLETE &&
-      result.subchannel != nullptr && client_stats_ != nullptr) {
+      result.connected_subchannel != nullptr && client_stats_ != nullptr) {
     // TODO(roth): Add support for client stats.
   }
   return result;
@@ -1986,9 +1989,6 @@ void XdsLb::LocalityMap::LocalityEntry::ShutdownLocked() {
         parent_->interested_parties());
     pending_child_policy_.reset();
   }
-  // Drop our ref to the child's picker, in case it's holding a ref to
-  // the child.
-  picker_ref_.reset();
 }
 
 void XdsLb::LocalityMap::LocalityEntry::ResetBackoffLocked() {
