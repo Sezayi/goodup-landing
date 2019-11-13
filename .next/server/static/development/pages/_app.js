@@ -115,14 +115,14 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
 
 /***/ }),
 
@@ -234,275 +234,140 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
-
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  } else {
-    var newObj = {};
-
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-          var desc = _Object$defineProperty && _Object$getOwnPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : {};
-
-          if (desc.get || desc.set) {
-            _Object$defineProperty(newObj, key, desc);
-          } else {
-            newObj[key] = obj[key];
-          }
-        }
-      }
-    }
-
-    newObj["default"] = obj;
-    return newObj;
-  }
-}
-
-module.exports = _interopRequireWildcard;
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/client/router.js":
-/*!*************************************************!*\
-  !*** ./node_modules/next/dist/client/router.js ***!
-  \*************************************************/
+/***/ "./node_modules/next/dist/next-server/lib/utils.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/utils.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
+var _Object$keys = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
-exports.__esModule = true;
-exports.useRouter = useRouter;
-exports.makePublicRouterInstance = makePublicRouterInstance;
-exports.createRouter = exports.withRouter = exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/extends */ "./node_modules/@babel/runtime-corejs2/helpers/extends.js"));
-
-var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _router2 = _interopRequireWildcard(__webpack_require__(/*! next-server/dist/lib/router/router */ "next-server/dist/lib/router/router"));
-
-exports.Router = _router2.default;
-exports.NextRouter = _router2.NextRouter;
-
-var _routerContext = __webpack_require__(/*! next-server/dist/lib/router-context */ "next-server/dist/lib/router-context");
-
-var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
-
-exports.withRouter = _withRouter.default;
-/* global window */
-
-const singletonRouter = {
-  router: null,
-  // holds the actual router instance
-  readyCallbacks: [],
-
-  ready(cb) {
-    if (this.router) return cb();
-
-    if (false) {}
-  }
-
-}; // Create public properties and methods of the router in the singletonRouter
-
-const urlPropertyFields = ['pathname', 'route', 'query', 'asPath'];
-const propertyFields = ['components'];
-const routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
-const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
-
-(0, _defineProperty.default)(singletonRouter, 'events', {
-  get() {
-    return _router2.default.events;
-  }
-
+_Object$defineProperty(exports, "__esModule", {
+  value: true
 });
-propertyFields.concat(urlPropertyFields).forEach(field => {
-  // Here we need to use Object.defineProperty because, we need to return
-  // the property assigned to the actual router
-  // The value might get changed as we change routes and this is the
-  // proper way to access it
-  (0, _defineProperty.default)(singletonRouter, field, {
-    get() {
-      const router = getRouter();
-      return router[field];
+
+const url_1 = __webpack_require__(/*! url */ "url");
+/**
+ * Utils
+ */
+
+
+function execOnce(fn) {
+  let used = false;
+  let result = null;
+  return (...args) => {
+    if (!used) {
+      used = true;
+      result = fn.apply(this, args);
     }
 
-  });
-});
-coreMethodFields.forEach(field => {
-  // We don't really know the types here, so we add them later instead
-  ;
-
-  singletonRouter[field] = function () {
-    const router = getRouter();
-    return router[field](...arguments);
+    return result;
   };
-});
-routerEvents.forEach(event => {
-  singletonRouter.ready(() => {
-    _router2.default.events.on(event, function () {
-      const eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
-      const _singletonRouter = singletonRouter;
+}
 
-      if (_singletonRouter[eventField]) {
-        try {
-          _singletonRouter[eventField](...arguments);
-        } catch (err) {
-          // tslint:disable-next-line:no-console
-          console.error("Error when running the Router event: " + eventField); // tslint:disable-next-line:no-console
+exports.execOnce = execOnce;
 
-          console.error(err.message + "\n" + err.stack);
-        }
-      }
-    });
-  });
-});
+function getLocationOrigin() {
+  const {
+    protocol,
+    hostname,
+    port
+  } = window.location;
+  return `${protocol}//${hostname}${port ? ':' + port : ''}`;
+}
 
-function getRouter() {
-  if (!singletonRouter.router) {
-    const message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
+exports.getLocationOrigin = getLocationOrigin;
+
+function getURL() {
+  const {
+    href
+  } = window.location;
+  const origin = getLocationOrigin();
+  return href.substring(origin.length);
+}
+
+exports.getURL = getURL;
+
+function getDisplayName(Component) {
+  return typeof Component === 'string' ? Component : Component.displayName || Component.name || 'Unknown';
+}
+
+exports.getDisplayName = getDisplayName;
+
+function isResSent(res) {
+  return res.finished || res.headersSent;
+}
+
+exports.isResSent = isResSent;
+
+async function loadGetInitialProps(App, ctx) {
+  if (true) {
+    if (App.prototype && App.prototype.getInitialProps) {
+      const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://err.sh/zeit/next.js/get-initial-props-as-an-instance-method for more information.`;
+      throw new Error(message);
+    }
+  } // when called from _app `ctx` is nested in `ctx`
+
+
+  const res = ctx.res || ctx.ctx && ctx.ctx.res;
+
+  if (!App.getInitialProps) {
+    if (ctx.ctx && ctx.Component) {
+      // @ts-ignore pageProps default
+      return {
+        pageProps: await loadGetInitialProps(ctx.Component, ctx.ctx)
+      };
+    }
+
+    return {};
+  }
+
+  const props = await App.getInitialProps(ctx);
+
+  if (res && isResSent(res)) {
+    return props;
+  }
+
+  if (!props) {
+    const message = `"${getDisplayName(App)}.getInitialProps()" should resolve to an object. But found "${props}" instead.`;
     throw new Error(message);
   }
 
-  return singletonRouter.router;
-} // Export the singletonRouter and this is the public API.
-
-
-var _default = singletonRouter; // Reexport the withRoute HOC
-
-exports.default = _default;
-
-function useRouter() {
-  return _react.default.useContext(_routerContext.RouterContext);
-} // INTERNAL APIS
-// -------------
-// (do not use following exports inside the app)
-// Create a router and assign it as the singleton instance.
-// This is used in client side when we are initilizing the app.
-// This should **not** use inside the server.
-
-
-const createRouter = function createRouter() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  singletonRouter.router = new _router2.default(...args);
-  singletonRouter.readyCallbacks.forEach(cb => cb());
-  singletonRouter.readyCallbacks = [];
-  return singletonRouter.router;
-}; // This function is used to create the `withRouter` router instance
-
-
-exports.createRouter = createRouter;
-
-function makePublicRouterInstance(router) {
-  const _router = router;
-  const instance = {};
-
-  for (const property of urlPropertyFields) {
-    if (typeof _router[property] === 'object') {
-      instance[property] = (0, _extends2.default)({}, _router[property]); // makes sure query is not stateful
-
-      continue;
-    }
-
-    instance[property] = _router[property];
-  } // Events is a static property on the router, the router doesn't have to be initialized to use it
-
-
-  instance.events = _router2.default.events;
-  propertyFields.forEach(field => {
-    // Here we need to use Object.defineProperty because, we need to return
-    // the property assigned to the actual router
-    // The value might get changed as we change routes and this is the
-    // proper way to access it
-    (0, _defineProperty.default)(instance, field, {
-      get() {
-        return _router[field];
-      }
-
-    });
-  });
-  coreMethodFields.forEach(field => {
-    instance[field] = function () {
-      return _router[field](...arguments);
-    };
-  });
-  return instance;
-}
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/client/with-router.js":
-/*!******************************************************!*\
-  !*** ./node_modules/next/dist/client/with-router.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.default = withRouter;
-
-var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/extends */ "./node_modules/@babel/runtime-corejs2/helpers/extends.js"));
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
-
-function withRouter(ComposedComponent) {
-  class WithRouteWrapper extends _react.default.Component {
-    constructor() {
-      super(...arguments);
-      this.context = void 0;
-    }
-
-    render() {
-      return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
-        router: this.context.router
-      }, this.props));
-    }
-
-  }
-
-  WithRouteWrapper.displayName = void 0;
-  WithRouteWrapper.getInitialProps = void 0;
-  WithRouteWrapper.contextTypes = {
-    router: _propTypes.default.object
-  };
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
-
   if (true) {
-    const name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
-    WithRouteWrapper.displayName = "withRouter(" + name + ")";
+    if (_Object$keys(props).length === 0 && !ctx.ctx) {
+      console.warn(`${getDisplayName(App)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
+    }
   }
 
-  return WithRouteWrapper;
+  return props;
 }
+
+exports.loadGetInitialProps = loadGetInitialProps;
+exports.urlObjectKeys = ['auth', 'hash', 'host', 'hostname', 'href', 'path', 'pathname', 'port', 'protocol', 'query', 'search', 'slashes'];
+
+function formatWithValidation(url, options) {
+  if (true) {
+    if (url !== null && typeof url === 'object') {
+      _Object$keys(url).forEach(key => {
+        if (exports.urlObjectKeys.indexOf(key) === -1) {
+          console.warn(`Unknown key passed via urlObject into url.format: ${key}`);
+        }
+      });
+    }
+  }
+
+  return url_1.format(url, options);
+}
+
+exports.formatWithValidation = formatWithValidation;
+exports.SUPPORTS_PERFORMANCE = typeof performance !== 'undefined';
+exports.SUPPORTS_PERFORMANCE_USER_TIMING = exports.SUPPORTS_PERFORMANCE && typeof performance.mark === 'function' && typeof performance.measure === 'function';
 
 /***/ }),
 
@@ -529,18 +394,13 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
-
-var _utils = __webpack_require__(/*! next-server/dist/lib/utils */ "next-server/dist/lib/utils");
+var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
 
 exports.AppInitialProps = _utils.AppInitialProps;
-
-var _router = __webpack_require__(/*! ../client/router */ "./node_modules/next/dist/client/router.js");
 /**
 * `App` component is used for initialize of pages. It allows for overwriting and full control of the `page` initialization.
 * This allows for keeping state between navigation, custom error handling, injecting additional data.
 */
-
 
 function appGetInitialProps(_x) {
   return _appGetInitialProps.apply(this, arguments);
@@ -548,11 +408,11 @@ function appGetInitialProps(_x) {
 
 function _appGetInitialProps() {
   _appGetInitialProps = (0, _asyncToGenerator2.default)(function* (_ref) {
-    let {
+    var {
       Component,
       ctx
     } = _ref;
-    const pageProps = yield (0, _utils.loadGetInitialProps)(Component, ctx);
+    var pageProps = yield (0, _utils.loadGetInitialProps)(Component, ctx);
     return {
       pageProps
     };
@@ -561,96 +421,93 @@ function _appGetInitialProps() {
 }
 
 class App extends _react.default.Component {
-  getChildContext() {
-    return {
-      router: (0, _router.makePublicRouterInstance)(this.props.router)
-    };
-  } // Kept here for backwards compatibility.
+  // Kept here for backwards compatibility.
   // When someone ended App they could call `super.componentDidCatch`.
   // @deprecated This method is no longer needed. Errors are caught at the top level
-
-
   componentDidCatch(error, _errorInfo) {
     throw error;
   }
 
   render() {
-    const {
+    var {
       router,
       Component,
       pageProps
     } = this.props;
-    const url = createUrl(router);
-    return _react.default.createElement(Container, null, _react.default.createElement(Component, (0, _extends2.default)({}, pageProps, {
+    var url = createUrl(router);
+    return _react.default.createElement(Component, (0, _extends2.default)({}, pageProps, {
       url: url
-    })));
+    }));
   }
 
+}
+
+exports.default = App;
+App.origGetInitialProps = appGetInitialProps;
+App.getInitialProps = appGetInitialProps;
+var warnContainer;
+var warnUrl;
+
+if (true) {
+  warnContainer = (0, _utils.execOnce)(() => {
+    console.warn("Warning: the `Container` in `_app` has been deprecated and should be removed. https://err.sh/zeit/next.js/app-container-deprecated");
+  });
+  warnUrl = (0, _utils.execOnce)(() => {
+    console.error("Warning: the 'url' property is deprecated. https://err.sh/zeit/next.js/url-deprecated");
+  });
 } // @deprecated noop for now until removal
 
 
-exports.default = App;
-App.childContextTypes = {
-  router: _propTypes.default.object
-};
-App.origGetInitialProps = appGetInitialProps;
-App.getInitialProps = appGetInitialProps;
-
 function Container(p) {
+  if (true) warnContainer();
   return p.children;
 }
 
-const warnUrl = (0, _utils.execOnce)(() => {
-  if (true) {
-    console.error("Warning: the 'url' property is deprecated. https://err.sh/zeit/next.js/url-deprecated");
-  }
-});
-
 function createUrl(router) {
   // This is to make sure we don't references the router object at call time
-  const {
+  var {
     pathname,
     asPath,
     query
   } = router;
   return {
     get query() {
-      warnUrl();
+      if (true) warnUrl();
       return query;
     },
 
     get pathname() {
-      warnUrl();
+      if (true) warnUrl();
       return pathname;
     },
 
     get asPath() {
-      warnUrl();
+      if (true) warnUrl();
       return asPath;
     },
 
     back: () => {
-      warnUrl();
+      if (true) warnUrl();
       router.back();
     },
     push: (url, as) => {
-      warnUrl();
+      if (true) warnUrl();
       return router.push(url, as);
     },
     pushTo: (href, as) => {
-      warnUrl();
-      const pushRoute = as ? href : '';
-      const pushUrl = as || href;
+      if (true) warnUrl();
+      var pushRoute = as ? href : '';
+      var pushUrl = as || href;
       return router.push(pushRoute, pushUrl);
     },
     replace: (url, as) => {
-      warnUrl();
+      if (true) warnUrl();
       return router.replace(url, as);
     },
     replaceTo: (href, as) => {
-      warnUrl();
-      const replaceRoute = as ? href : '';
-      const replaceUrl = as || href;
+      if (true) warnUrl();
+      var replaceRoute = as ? href : '';
+      var replaceUrl = as || href;
       return router.replace(replaceRoute, replaceUrl);
     }
   };
@@ -692,14 +549,14 @@ module.exports = require("core-js/library/fn/object/define-property");
 
 /***/ }),
 
-/***/ "core-js/library/fn/object/get-own-property-descriptor":
-/*!************************************************************************!*\
-  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
-  \************************************************************************/
+/***/ "core-js/library/fn/object/keys":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/object/keys" ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 
@@ -714,50 +571,6 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
-/***/ "next-server/dist/lib/router-context":
-/*!******************************************************!*\
-  !*** external "next-server/dist/lib/router-context" ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-server/dist/lib/router-context");
-
-/***/ }),
-
-/***/ "next-server/dist/lib/router/router":
-/*!*****************************************************!*\
-  !*** external "next-server/dist/lib/router/router" ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-server/dist/lib/router/router");
-
-/***/ }),
-
-/***/ "next-server/dist/lib/utils":
-/*!*********************************************!*\
-  !*** external "next-server/dist/lib/utils" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-server/dist/lib/utils");
-
-/***/ }),
-
-/***/ "prop-types":
-/*!*****************************!*\
-  !*** external "prop-types" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -766,6 +579,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "url":
+/*!**********************!*\
+  !*** external "url" ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
 
 /***/ })
 

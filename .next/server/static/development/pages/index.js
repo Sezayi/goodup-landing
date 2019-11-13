@@ -104,57 +104,31 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-spring */ "react-spring");
-/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_spring__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Explainer/index.js";
-
-
+var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/components/Explainer/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import { useSpring, animated } from 'react-spring';
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 50, (x - window.innerWidth / 2) / 50, 1.1];
 
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 function Explainer() {
-  const [props, set] = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])(() => ({
-    xys: [0, 0, 1],
-    config: {
-      mass: 5,
-      tension: 250,
-      friction: 40
-    }
-  }));
-  const style = {
-    transform: props.xys.interpolate(trans),
-    backgroundImage: "url(/static/GPTW-Ebook-cover.png",
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)'
-  };
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  // const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 250, friction: 40 } }))
+  // const style = {
+  //   transform: props.xys.interpolate(trans),
+  //   backgroundImage: "url(/static/ebook-cover.png",
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center center',
+  //   boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)',
+  // }
+  return __jsx("div", {
     className: "flex flex-1 bg-descriptive justify-center items-center h-screen",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
-    className: "w-2/3 lgg:w2/3 xl:w-1/2 h-xxxl lg:h-xxxxl bg-grey image",
-    onMouseMove: ({
-      clientX: x,
-      clientY: y
-    }) => set({
-      xys: calc(x, y)
-    }),
-    onMouseLeave: () => set({
-      xys: [0, 0, 1]
-    }),
-    style: style,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: this
-  }));
+  });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Explainer);
@@ -174,7 +148,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _GoogleAnalytics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../GoogleAnalytics */ "./components/GoogleAnalytics/index.js");
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/GaWrapper/index.js";
+var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/components/GaWrapper/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 class GaWrapper extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -188,7 +163,7 @@ class GaWrapper extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
@@ -241,22 +216,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Layout/index.js";
+var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/components/Layout/index.js";
 
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function Layout(props) {
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return __jsx("div", {
     className: "jsx-4293174121" + " " + "flex flex-col lg:h-full lg:flex-row height",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
     },
     __self: this
-  }, props.children, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  }, props.children, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "4293174121",
     __self: this
-  }, "@font-face{font-family:\"Edmondsans\";src:url(\"/static/fonts/Edmondsans-Regular.otf\");font-display:auto;font-style:normal;}@font-face{font-family:\"Edmondsans-medium\";src:url(\"/static/fonts/Edmondsans-Medium.otf\");font-display:auto;font-style:normal;font-weight:500;}.font-edmondsans{font-family:\"Edmondsans\";}.font-edmondsans-medium{font-family:\"Edmondsans-medium\";}.a{-webkit-text-decoration:underline;text-decoration:underline;color:#3C96DC;}::-webkit-scrollbar{width:0px;background:transparent;-ms-overflow-style:none;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;}.height{height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS3lCLEFBR29DLEFBTU8sQUFPUCxBQUdPLEFBR0osQUFJaEIsQUFNQyxVQUxZLEdBTTNCLFlBN0JrRCxBQWFsRCxPQVBpRCxBQVVqRCxDQVE0Qix3QkFDSCxHQU5QLGFBbEJFLENBbUJwQixLQWJvQixZQUxBLE1BTUEsWUFMcEIsTUFNa0IsZ0JBQ2xCLDJCQWdCQSIsImZpbGUiOiIvVXNlcnMvc2V6YXlpL3NpdGVzL2dvb2R1cC1sYW5kaW5nL2NvbXBvbmVudHMvTGF5b3V0L2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gTGF5b3V0KHByb3BzKSB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGxnOmgtZnVsbCBsZzpmbGV4LXJvdyBoZWlnaHRcIj5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cblxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fuc1wiO1xuICAgICAgICAgIHNyYzogdXJsKFwiL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLVJlZ3VsYXIub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgIH1cbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fucy1tZWRpdW1cIjtcbiAgICAgICAgICBzcmM6IHVybChcIi9zdGF0aWMvZm9udHMvRWRtb25kc2Fucy1NZWRpdW0ub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgfVxuICAgICAgICAuZm9udC1lZG1vbmRzYW5zIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zXCI7XG4gICAgICAgIH1cbiAgICAgICAgLmZvbnQtZWRtb25kc2Fucy1tZWRpdW0ge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBcIkVkbW9uZHNhbnMtbWVkaXVtXCI7XG4gICAgICAgIH1cbiAgICAgICAgLmEge1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gICAgICAgICAgICBjb2xvcjogIzNDOTZEQztcbiAgICAgICAgfVxuICAgICAgICA6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICAgICAgICAgIHdpZHRoOiAwcHg7ICAvKiBSZW1vdmUgc2Nyb2xsYmFyIHNwYWNlICovXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgIC8qIE9wdGlvbmFsOiBqdXN0IG1ha2Ugc2Nyb2xsYmFyIGludmlzaWJsZSAqL1xuICAgICAgICAgICAgLW1zLW92ZXJmbG93LXN0eWxlOiBub25lOyAvKiBJRSAxMSAqL1xuICAgICAgICAgICAgc2Nyb2xsYmFyLXdpZHRoOiBub25lOyAvKiBGaXJlZm94IDY0ICovXG4gICAgICAgIH1cbiAgICAgICAgLmhlaWdodCB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvZGl2PlxuICApO1xufVxuXG5leHBvcnQgZGVmYXVsdCBMYXlvdXQ7XG4iXX0= */\n/*@ sourceURL=/Users/sezayi/sites/goodup-landing/components/Layout/index.js */"));
+  }, "@font-face{font-family:\"Edmondsans\";src:url(\"/static/fonts/Edmondsans-Regular.otf\");font-display:auto;font-style:normal;}@font-face{font-family:\"Edmondsans-medium\";src:url(\"/static/fonts/Edmondsans-Medium.otf\");font-display:auto;font-style:normal;font-weight:500;}.font-edmondsans{font-family:\"Edmondsans\";}.font-edmondsans-medium{font-family:\"Edmondsans-medium\";}.a{-webkit-text-decoration:underline;text-decoration:underline;color:#3C96DC;}::-webkit-scrollbar{width:0px;background:transparent;-ms-overflow-style:none;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;}.height{height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9TZXpheWkvV29ya3NwYWNlL2dvb2R1cC1sYW5kaW5nL2NvbXBvbmVudHMvTGF5b3V0L2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUt5QixBQUdvQyxBQU1PLEFBT1AsQUFHTyxBQUdKLEFBSWhCLEFBTUMsVUFMWSxHQU0zQixZQTdCa0QsQUFhbEQsT0FQaUQsQUFVakQsQ0FRNEIsd0JBQ0gsR0FOUCxhQWxCRSxDQW1CcEIsS0Fib0IsWUFMQSxNQU1BLFlBTHBCLE1BTWtCLGdCQUNsQiwyQkFnQkEiLCJmaWxlIjoiL1VzZXJzL1NlemF5aS9Xb3Jrc3BhY2UvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBMYXlvdXQocHJvcHMpIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgbGc6aC1mdWxsIGxnOmZsZXgtcm93IGhlaWdodFwiPlxuICAgICAge3Byb3BzLmNoaWxkcmVufVxuXG4gICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zXCI7XG4gICAgICAgICAgc3JjOiB1cmwoXCIvc3RhdGljL2ZvbnRzL0VkbW9uZHNhbnMtUmVndWxhci5vdGZcIik7XG4gICAgICAgICAgZm9udC1kaXNwbGF5OiBhdXRvO1xuICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgfVxuICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zLW1lZGl1bVwiO1xuICAgICAgICAgIHNyYzogdXJsKFwiL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLU1lZGl1bS5vdGZcIik7XG4gICAgICAgICAgZm9udC1kaXNwbGF5OiBhdXRvO1xuICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xuICAgICAgICB9XG4gICAgICAgIC5mb250LWVkbW9uZHNhbnMge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBcIkVkbW9uZHNhbnNcIjtcbiAgICAgICAgfVxuICAgICAgICAuZm9udC1lZG1vbmRzYW5zLW1lZGl1bSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fucy1tZWRpdW1cIjtcbiAgICAgICAgfVxuICAgICAgICAuYSB7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICAgICAgICAgIGNvbG9yOiAjM0M5NkRDO1xuICAgICAgICB9XG4gICAgICAgIDo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICAgICAgICAgICAgd2lkdGg6IDBweDsgIC8qIFJlbW92ZSBzY3JvbGxiYXIgc3BhY2UgKi9cbiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyAgLyogT3B0aW9uYWw6IGp1c3QgbWFrZSBzY3JvbGxiYXIgaW52aXNpYmxlICovXG4gICAgICAgICAgICAtbXMtb3ZlcmZsb3ctc3R5bGU6IG5vbmU7IC8qIElFIDExICovXG4gICAgICAgICAgICBzY3JvbGxiYXItd2lkdGg6IG5vbmU7IC8qIEZpcmVmb3ggNjQgKi9cbiAgICAgICAgfVxuICAgICAgICAuaGVpZ2h0IHtcbiAgICAgICAgICBoZWlnaHQ6IDEwMHZoO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmV4cG9ydCBkZWZhdWx0IExheW91dDtcbiJdfQ== */\n/*@ sourceURL=/Users/Sezayi/Workspace/goodup-landing/components/Layout/index.js */"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -277,8 +253,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Signup/index.js";
+var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/components/Signup/index.js";
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const firebase = __webpack_require__(/*! ../../node_modules/firebase */ "./node_modules/firebase/dist/index.node.cjs.js");
@@ -342,35 +319,35 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return __jsx("div", {
       className: "flex-1 flex justify-center lg:items-center flex-col",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, __jsx("div", {
       className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 66
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    }, __jsx("h2", {
       className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 67
       },
       __self: this
-    }, "Download it for free"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      className: "font-edmondsans-medium text-descriptive text-32 mb-32",
+    }, "Download it for free"), __jsx("h1", {
+      className: "font-edmondsans-medium text-descriptive text-32 mb-24",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 70
       },
       __self: this
-    }, " ", "The complete guide to activate employees and embed purpose in your organisation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
       onSubmit: this.handleSubmit,
       className: "FormFields",
       __source: {
@@ -378,14 +355,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 74
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 75
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    }, __jsx("label", {
       className: "mb-8 font-edmondsans-medium",
       htmlFor: "name",
       __source: {
@@ -393,7 +370,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 76
       },
       __self: this
-    }, "Full Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, "Full Name"), __jsx("input", {
       className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
       ref: this.inputNameRef,
       type: "text",
@@ -408,14 +385,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 79
       },
       __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    })), __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 91
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    }, __jsx("label", {
       className: "mb-8 font-edmondsans-medium",
       htmlFor: "company",
       __source: {
@@ -423,7 +400,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 92
       },
       __self: this
-    }, "Your company name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, "Your company name"), __jsx("input", {
       className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
       type: "text",
       id: "company",
@@ -437,14 +414,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 95
       },
       __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "font-edmondsans text-descriptive flex flex-col mb-32",
+    })), __jsx("div", {
+      className: "font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 106
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    }, __jsx("label", {
       className: "mb-8 font-edmondsans-medium",
       htmlFor: "name",
       __source: {
@@ -452,7 +429,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 107
       },
       __self: this
-    }, "Work e-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, "Work e-mail"), __jsx("input", {
       className: "shadow-1 appearance-none border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
       type: "email",
       id: "email",
@@ -466,20 +443,20 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 110
       },
       __self: this
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "font-edmondsans text-descriptive mb-32",
+    })), __jsx("div", {
+      className: "font-edmondsans text-descriptive mb-24",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 121
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    }, __jsx("label", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 122
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, __jsx("input", {
       type: "checkbox",
       name: "hasAgreed",
       required: true,
@@ -490,7 +467,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 123
       },
       __self: this
-    }), " ", "I agree to all statements in the ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }), " ", "I agree to all statements in the ", __jsx("a", {
       className: "underline",
       href: "",
       __source: {
@@ -498,28 +475,28 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 130
       },
       __self: this
-    }, "terms of service"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "terms of service"))), __jsx("div", {
       className: "mb-32",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 134
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, __jsx("button", {
       className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 135
       },
       __self: this
-    }, "Download E-book")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    }, "Download E-book")), __jsx("p", {
       className: "font-edmondsans text-descriptive",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 139
       },
       __self: this
-    }, "Learn more about purpose on  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, "Learn more about purpose on  ", __jsx("a", {
       className: "text-action hover:underline",
       href: "https://www.goodup.com",
       __source: {
@@ -539,10 +516,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   !*** ./fire.js ***!
   \*****************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 // Your web app's Firebase configuration
 module.exports = {
@@ -615,38 +589,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Explainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Explainer */ "./components/Explainer/index.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
 /* harmony import */ var _components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GaWrapper */ "./components/GaWrapper/index.js");
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
+var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/pages/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-
-/* harmony default export */ __webpack_exports__["default"] = (() => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+/* harmony default export */ __webpack_exports__["default"] = (() => __jsx("div", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 8
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+}, __jsx(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 9
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+}, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 10
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Explainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+}, __jsx(_components_Explainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 11
   },
   __self: undefined
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signup__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}), __jsx(_components_Signup__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 12
@@ -674,7 +649,7 @@ var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/Sezayi/Workspace/goodup-landing/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -764,17 +739,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-ga");
-
-/***/ }),
-
-/***/ "react-spring":
-/*!*******************************!*\
-  !*** external "react-spring" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-spring");
 
 /***/ }),
 
