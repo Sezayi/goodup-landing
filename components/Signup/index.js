@@ -51,10 +51,14 @@ export default class Signup extends React.Component {
       company: "",
       name: ""
     });
-    usersRef.push(user, () => {
+    usersRef.push(user)
+    .then(() => {
       Router.push({pathname: '/thankyou'})
-    });
-  }
+    })
+    .catch(err => {
+      window.alert('error:' + err)
+    }
+    )}
 
   componentDidMount() {
     this.inputNameRef.current.focus();
