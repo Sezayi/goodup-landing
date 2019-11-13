@@ -14,24 +14,18 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/Sezayi/Workspace/goodup-landing/components/Explainer/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import { useSpring, animated } from 'react-spring';
-
-var calc = function calc(x, y) {
-  return [-(y - window.innerHeight / 2) / 50, (x - window.innerWidth / 2) / 50, 1.1];
-};
-
-var trans = function trans(x, y, s) {
-  return "perspective(600px) rotateX(".concat(x, "deg) rotateY(").concat(y, "deg) scale(").concat(s, ")");
-};
+// const calc = (x, y) => [-(y - window.innerHeight / 2) / 50, (x - window.innerWidth / 2) / 50, 1.1]
+// const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 function Explainer() {
-  // const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 250, friction: 40 } }))
-  // const style = {
-  //   transform: props.xys.interpolate(trans),
-  //   backgroundImage: "url(/static/ebook-cover.png",
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center center',
-  //   boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)',
-  // }
+  // // const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 250, friction: 40 } }))
+  var style = {
+    // transform: props.xys.interpolate(trans),
+    backgroundImage: "url(/static/ebook-cover.png",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    boxShadow: '0px 10px 30px -5px rgba(0, 0, 0, 0.3)'
+  };
   return __jsx("div", {
     className: "flex flex-1 bg-descriptive justify-center items-center h-screen",
     __source: {
@@ -39,7 +33,15 @@ function Explainer() {
       lineNumber: 20
     },
     __self: this
-  });
+  }, __jsx("div", {
+    className: "w-2/3 lgg:w2/3 xl:w-1/2 h-xxxl lg:h-xxxxl bg-grey",
+    style: style,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Explainer);
@@ -61817,7 +61819,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FSezayi%2FWorkspace%2Fgoodup-landing%2Fpages%2Findex.js ***!
   \**********************************************************************************************************************************/
@@ -61840,5 +61842,5 @@ module.exports = dll_ea92a4d9664833a26066;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
