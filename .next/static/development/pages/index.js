@@ -312,7 +312,7 @@ function (_React$Component) {
           lineNumber: 67
         },
         __self: this
-      }, "Download it for free"), __jsx("h1", {
+      }, "Download this ebook for free"), __jsx("h1", {
         className: "font-edmondsans-medium text-descriptive text-32 mb-24",
         __source: {
           fileName: _jsxFileName,

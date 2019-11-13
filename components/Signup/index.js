@@ -65,7 +65,7 @@ export default class Signup extends React.Component {
       <div className="flex-1 flex justify-center lg:items-center flex-col">
         <div className="lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ">
           <h2 className="font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0">
-            Download it for free
+            Download this ebook for free
           </h2>
           <h1 className="font-edmondsans-medium text-descriptive text-32 mb-24">
             {" "}
