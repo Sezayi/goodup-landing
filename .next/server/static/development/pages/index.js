@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -312,7 +312,8 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     const user = {
       email: this.state.email,
       company: this.state.company,
-      name: this.state.name
+      name: this.state.name,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
     };
     this.setState({
       email: "",
@@ -324,7 +325,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         pathname: '/thankyou'
       });
     }).catch(err => {
-      window.alert('error:' + err);
+      window.alert('Oops, something went wrong' + err);
     });
   }
 
@@ -337,28 +338,28 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "flex-1 flex justify-center lg:items-center flex-col",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 70
       },
       __self: this
     }, __jsx("div", {
       className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 71
       },
       __self: this
     }, __jsx("h2", {
       className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 72
       },
       __self: this
     }, "Download this ebook for free"), __jsx("h1", {
       className: "font-edmondsans-medium text-descriptive text-32 mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 75
       },
       __self: this
     }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
@@ -366,14 +367,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "FormFields",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 79
       },
       __self: this
     }, __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 80
       },
       __self: this
     }, __jsx("label", {
@@ -381,7 +382,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 81
       },
       __self: this
     }, "Full Name"), __jsx("input", {
@@ -396,14 +397,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 84
       },
       __self: this
     })), __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 96
       },
       __self: this
     }, __jsx("label", {
@@ -411,7 +412,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "company",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 97
       },
       __self: this
     }, "Your company name"), __jsx("input", {
@@ -425,14 +426,14 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 100
       },
       __self: this
     })), __jsx("div", {
       className: "font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 110
+        lineNumber: 111
       },
       __self: this
     }, __jsx("label", {
@@ -440,7 +441,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 112
       },
       __self: this
     }, "Work e-mail"), __jsx("input", {
@@ -454,20 +455,20 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 115
       },
       __self: this
     })), __jsx("div", {
       className: "font-edmondsans text-descriptive mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 125
+        lineNumber: 126
       },
       __self: this
     }, __jsx("label", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 126
+        lineNumber: 127
       },
       __self: this
     }, __jsx("input", {
@@ -478,7 +479,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 128
       },
       __self: this
     }), " ", "I agree to all statements in the ", __jsx("a", {
@@ -486,28 +487,28 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       href: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 135
       },
       __self: this
     }, "terms of service"))), __jsx("div", {
       className: "mb-32",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 139
       },
       __self: this
     }, __jsx("button", {
       className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139
+        lineNumber: 140
       },
       __self: this
     }, "Download E-book")), __jsx("p", {
       className: "font-edmondsans text-descriptive",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }, "Learn more about purpose on  ", __jsx("a", {
@@ -515,7 +516,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       href: "https://www.goodup.com",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }, "www.goodup.com")))));
@@ -656,7 +657,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

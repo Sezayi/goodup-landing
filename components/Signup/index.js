@@ -44,7 +44,8 @@ export default class Signup extends React.Component {
     const user = {
       email: this.state.email,
       company: this.state.company,
-      name: this.state.name
+      name: this.state.name,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
     };
     this.setState({
       email: "",
@@ -56,7 +57,7 @@ export default class Signup extends React.Component {
       Router.push({pathname: '/thankyou'})
     })
     .catch(err => {
-      window.alert('error:' + err)
+      window.alert('Oops, something went wrong' + err)
     }
     )}
 

@@ -270,7 +270,8 @@ function (_React$Component) {
       var user = {
         email: this.state.email,
         company: this.state.company,
-        name: this.state.name
+        name: this.state.name,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
       };
       this.setState({
         email: "",
@@ -282,7 +283,7 @@ function (_React$Component) {
           pathname: '/thankyou'
         });
       })["catch"](function (err) {
-        window.alert('error:' + err);
+        window.alert('Oops, something went wrong' + err);
       });
     }
   }, {
@@ -297,28 +298,28 @@ function (_React$Component) {
         className: "flex-1 flex justify-center lg:items-center flex-col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 70
         },
         __self: this
       }, __jsx("div", {
         className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 71
         },
         __self: this
       }, __jsx("h2", {
         className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 72
         },
         __self: this
       }, "Download this ebook for free"), __jsx("h1", {
         className: "font-edmondsans-medium text-descriptive text-32 mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 75
         },
         __self: this
       }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
@@ -326,14 +327,14 @@ function (_React$Component) {
         className: "FormFields",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 79
         },
         __self: this
       }, __jsx("div", {
         className: " font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 80
         },
         __self: this
       }, __jsx("label", {
@@ -341,7 +342,7 @@ function (_React$Component) {
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 81
         },
         __self: this
       }, "Full Name"), __jsx("input", {
@@ -356,14 +357,14 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 84
         },
         __self: this
       })), __jsx("div", {
         className: " font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 96
         },
         __self: this
       }, __jsx("label", {
@@ -371,7 +372,7 @@ function (_React$Component) {
         htmlFor: "company",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 97
         },
         __self: this
       }, "Your company name"), __jsx("input", {
@@ -385,14 +386,14 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 100
         },
         __self: this
       })), __jsx("div", {
         className: "font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 111
         },
         __self: this
       }, __jsx("label", {
@@ -400,7 +401,7 @@ function (_React$Component) {
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 112
         },
         __self: this
       }, "Work e-mail"), __jsx("input", {
@@ -414,20 +415,20 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 115
         },
         __self: this
       })), __jsx("div", {
         className: "font-edmondsans text-descriptive mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 126
         },
         __self: this
       }, __jsx("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 127
         },
         __self: this
       }, __jsx("input", {
@@ -438,7 +439,7 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 128
         },
         __self: this
       }), " ", "I agree to all statements in the ", __jsx("a", {
@@ -446,28 +447,28 @@ function (_React$Component) {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 135
         },
         __self: this
       }, "terms of service"))), __jsx("div", {
         className: "mb-32",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 139
         },
         __self: this
       }, __jsx("button", {
         className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 140
         },
         __self: this
       }, "Download E-book")), __jsx("p", {
         className: "font-edmondsans text-descriptive",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 144
         },
         __self: this
       }, "Learn more about purpose on  ", __jsx("a", {
@@ -475,7 +476,7 @@ function (_React$Component) {
         href: "https://www.goodup.com",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 144
         },
         __self: this
       }, "www.goodup.com")))));
@@ -51027,7 +51028,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.10' };
+var core = module.exports = { version: '2.6.9' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -57379,9 +57380,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_console_warn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/console/warn */ "./node_modules/react-ga/dist/esm/utils/console/warn.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -57476,7 +57475,6 @@ function (_Component) {
       }
 
       delete props.eventLabel;
-      delete props.trackerNames;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('a', props);
     }
   }]);
@@ -57539,9 +57537,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -57630,10 +57626,6 @@ function _initialize(gaTrackingID, options) {
 
     if (options.titleCase === false) {
       _titleCase = false;
-    }
-
-    if (options.useExistingGa) {
-      return;
     }
   }
 
@@ -57981,9 +57973,8 @@ var plugin = {
    * GA requires a plugin
    * @param name {String} e.g. 'ecommerce' or 'myplugin'
    * @param options {Object} optional e.g {path: '/log', debug: true}
-   * @param trackerName {String} optional e.g 'trackerName'
    */
-  require: function require(rawName, options, trackerName) {
+  require: function require(rawName, options) {
     if (typeof ga === 'function') {
       // Required Fields
       if (!rawName) {
@@ -57996,9 +57987,8 @@ var plugin = {
       if (name === '') {
         Object(_utils_console_warn__WEBPACK_IMPORTED_MODULE_4__["default"])('`name` cannot be an empty string in .require()');
         return;
-      }
+      } // Optional Fields
 
-      var requireString = trackerName ? "".concat(trackerName, ".require") : 'require'; // Optional Fields
 
       if (options) {
         if (_typeof(options) !== 'object') {
@@ -58010,13 +58000,13 @@ var plugin = {
           Object(_utils_console_warn__WEBPACK_IMPORTED_MODULE_4__["default"])('Empty `options` given to .require()');
         }
 
-        ga(requireString, name, options);
+        ga('require', name, options);
 
         if (_debug) {
           Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('require', '".concat(name, "', ").concat(JSON.stringify(options)));
         }
       } else {
-        ga(requireString, name);
+        ga('require', name);
 
         if (_debug) {
           Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('require', '".concat(name, "');"));
@@ -58180,9 +58170,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OutboundLink", function() { return OutboundLink; });
 /* harmony import */ var _components_OutboundLink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/OutboundLink */ "./node_modules/react-ga/dist/esm/components/OutboundLink.js");
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core */ "./node_modules/react-ga/dist/esm/core.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -58324,7 +58312,7 @@ __webpack_require__.r(__webpack_exports__);
 // https://support.google.com/analytics/answer/2795983?hl=en
 function mightBeEmail(s) {
   // There's no point trying to validate rfc822 fully, just look for ...@...
-  return typeof s === 'string' && s.indexOf('@') !== -1;
+  return /[^@]+@[^@]+/.test(s);
 }
 
 /***/ }),
@@ -61306,7 +61294,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FSezayi%2FWorkspace%2Fgoodup-landing%2Fpages%2Findex.js ***!
   \**********************************************************************************************************************************/
@@ -61329,5 +61317,5 @@ module.exports = dll_ea92a4d9664833a26066;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
