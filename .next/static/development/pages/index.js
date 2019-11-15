@@ -444,13 +444,13 @@ function (_React$Component) {
         __self: this
       }), " ", "I agree to all statements in the ", __jsx("a", {
         className: "underline",
-        href: "",
+        href: "https://goodup.com/terms-and-policy/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 135
         },
         __self: this
-      }, "terms of service"))), __jsx("div", {
+      }, "terms and policy"))), __jsx("div", {
         className: "mb-32",
         __source: {
           fileName: _jsxFileName,

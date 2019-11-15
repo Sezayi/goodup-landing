@@ -132,7 +132,7 @@ export default class Signup extends React.Component {
                   value={this.state.hasAgreed}
                   onChange={this.handleChange}
                 />{" "}
-                I agree to all statements in the <a className="underline" href="">terms of service</a>
+                I agree to all statements in the <a className="underline" href="https://goodup.com/terms-and-policy/">terms and policy</a>
               </label>
             </div>
 
