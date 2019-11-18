@@ -165,7 +165,7 @@ function (_React$Component) {
         ref: this.inputNameRef,
         type: "text",
         id: "name",
-        placeholder: "First Lastname",
+        placeholder: "e.g. Anna Green",
         name: "name",
         required: true,
         value: this.state.name,
@@ -195,7 +195,7 @@ function (_React$Component) {
         type: "text",
         id: "company",
         required: true,
-        placeholder: "i.e. The Good Company",
+        placeholder: "e.g. GoodUp",
         name: "company",
         value: this.state.company,
         onChange: this.handleChange,
@@ -224,7 +224,7 @@ function (_React$Component) {
         type: "email",
         id: "email",
         required: true,
-        placeholder: "you@yourwork.com",
+        placeholder: "anna@goodup.com",
         name: "email",
         value: this.state.email,
         onChange: this.handleChange,
@@ -259,13 +259,13 @@ function (_React$Component) {
         __self: this
       }), " ", "I agree to all statements in the ", __jsx("a", {
         className: "underline",
-        href: "",
+        href: "https://goodup.com/terms-and-policy/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 135
         },
         __self: this
-      }, "terms of service"))), __jsx("div", {
+      }, "terms and policy"))), __jsx("div", {
         className: "mb-32",
         __source: {
           fileName: _jsxFileName,
@@ -306,4 +306,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.bdaaa0e0493172b251e6.hot-update.js.map
+//# sourceMappingURL=index.js.04f08a8bdf5a4ad849c7.hot-update.js.map

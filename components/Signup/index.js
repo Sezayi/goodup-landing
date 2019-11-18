@@ -86,7 +86,7 @@ export default class Signup extends React.Component {
                 ref={this.inputNameRef}
                 type="text"
                 id="name"
-                placeholder="First Lastname"
+                placeholder="e.g. Anna Green"
                 name="name"
                 required={true}
                 value={this.state.name}
@@ -102,7 +102,7 @@ export default class Signup extends React.Component {
                 type="text"
                 id="company"
                 required={true}
-                placeholder="i.e. The Good Company"
+                placeholder="e.g. GoodUp"
                 name="company"
                 value={this.state.company}
                 onChange={this.handleChange}
@@ -117,7 +117,7 @@ export default class Signup extends React.Component {
                 type="email"
                 id="email"
                 required={true}
-                placeholder="you@yourwork.com"
+                placeholder="e.g. anna@goodup.com"
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}

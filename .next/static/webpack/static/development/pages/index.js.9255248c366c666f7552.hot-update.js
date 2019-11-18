@@ -165,7 +165,7 @@ function (_React$Component) {
         ref: this.inputNameRef,
         type: "text",
         id: "name",
-        placeholder: "First Lastname",
+        placeholder: "Anna Green",
         name: "name",
         required: true,
         value: this.state.name,
@@ -195,7 +195,7 @@ function (_React$Component) {
         type: "text",
         id: "company",
         required: true,
-        placeholder: "i.e. The Good Company",
+        placeholder: "GoodUp",
         name: "company",
         value: this.state.company,
         onChange: this.handleChange,
@@ -224,7 +224,7 @@ function (_React$Component) {
         type: "email",
         id: "email",
         required: true,
-        placeholder: "you@yourwork.com",
+        placeholder: "anna@goodup.com",
         name: "email",
         value: this.state.email,
         onChange: this.handleChange,
@@ -306,4 +306,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.13148fc29ee29054a794.hot-update.js.map
+//# sourceMappingURL=index.js.9255248c366c666f7552.hot-update.js.map
