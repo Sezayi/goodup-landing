@@ -19,7 +19,7 @@ export default class Signup extends React.Component {
       email: "",
       company: "",
       name: "",
-      hasAgreed: false
+      hasAgreed: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -45,12 +45,13 @@ export default class Signup extends React.Component {
       email: this.state.email,
       company: this.state.company,
       name: this.state.name,
-      timestamp: firebase.database.ServerValue.TIMESTAMP
+      timestamp: firebase.database.ServerValue.TIMESTAMP,
+      url: window.location.href
     };
     this.setState({
       email: "",
       company: "",
-      name: ""
+      name: "",
     });
     usersRef.push(user)
     .then(() => {
@@ -64,6 +65,7 @@ export default class Signup extends React.Component {
   componentDidMount() {
     this.inputNameRef.current.focus();
   }
+
 
   render() {
     return (

@@ -86,7 +86,8 @@ function (_React$Component) {
         email: this.state.email,
         company: this.state.company,
         name: this.state.name,
-        timestamp: firebase.database.ServerValue.TIMESTAMP
+        timestamp: firebase.database.ServerValue.TIMESTAMP,
+        url: window.location.href
       };
       this.setState({
         email: "",
@@ -113,28 +114,28 @@ function (_React$Component) {
         className: "flex-1 flex justify-center lg:items-center flex-col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 72
         },
         __self: this
       }, __jsx("div", {
         className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 73
         },
         __self: this
       }, __jsx("h2", {
         className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 74
         },
         __self: this
       }, "Download this ebook for free"), __jsx("h1", {
         className: "font-edmondsans-medium text-descriptive text-32 mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 77
         },
         __self: this
       }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
@@ -142,14 +143,14 @@ function (_React$Component) {
         className: "FormFields",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 81
         },
         __self: this
       }, __jsx("div", {
         className: " font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 82
         },
         __self: this
       }, __jsx("label", {
@@ -157,7 +158,7 @@ function (_React$Component) {
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 83
         },
         __self: this
       }, "Full Name"), __jsx("input", {
@@ -172,14 +173,14 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 86
         },
         __self: this
       })), __jsx("div", {
         className: " font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 98
         },
         __self: this
       }, __jsx("label", {
@@ -187,7 +188,7 @@ function (_React$Component) {
         htmlFor: "company",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 99
         },
         __self: this
       }, "Your company name"), __jsx("input", {
@@ -201,14 +202,14 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 102
         },
         __self: this
       })), __jsx("div", {
         className: "font-edmondsans text-descriptive flex flex-col mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 113
         },
         __self: this
       }, __jsx("label", {
@@ -216,7 +217,7 @@ function (_React$Component) {
         htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 114
         },
         __self: this
       }, "Work e-mail"), __jsx("input", {
@@ -224,26 +225,26 @@ function (_React$Component) {
         type: "email",
         id: "email",
         required: true,
-        placeholder: "anna@goodup.com",
+        placeholder: "e.g. anna@goodup.com",
         name: "email",
         value: this.state.email,
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 117
         },
         __self: this
       })), __jsx("div", {
         className: "font-edmondsans text-descriptive mb-24",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 128
         },
         __self: this
       }, __jsx("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 129
         },
         __self: this
       }, __jsx("input", {
@@ -254,7 +255,7 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 130
         },
         __self: this
       }), " ", "I agree to all statements in the ", __jsx("a", {
@@ -262,28 +263,28 @@ function (_React$Component) {
         href: "https://goodup.com/terms-and-policy/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 137
         },
         __self: this
       }, "terms and policy"))), __jsx("div", {
         className: "mb-32",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 141
         },
         __self: this
       }, __jsx("button", {
         className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 142
         },
         __self: this
       }, "Download E-book")), __jsx("p", {
         className: "font-edmondsans text-descriptive",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 146
         },
         __self: this
       }, "Learn more about purpose on  ", __jsx("a", {
@@ -291,7 +292,7 @@ function (_React$Component) {
         href: "https://www.goodup.com",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 146
         },
         __self: this
       }, "www.goodup.com")))));
@@ -306,4 +307,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.04f08a8bdf5a4ad849c7.hot-update.js.map
+//# sourceMappingURL=index.js.4b144844b58080de28ca.hot-update.js.map
