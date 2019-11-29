@@ -33,7 +33,7 @@
     "next-fonts": "^0.17.0",
     "next-ga": "^2.3.4",
     "next-images": "^1.2.0",
-    "next-seo": "^2.0.0",
+    "next-seo": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-ga": "^2.6.0",

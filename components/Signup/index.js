@@ -143,7 +143,7 @@ export default class Signup extends React.Component {
                 Download E-book
               </button>
             </div>
-            <p className="font-edmondsans text-descriptive">Learn more about purpose on  <a className="text-action hover:underline" href="https://www.goodup.com">www.goodup.com</a></p>
+            <p className="font-edmondsans text-descriptive">Learn more about purpose on  <a className="text-action hover:underline" href="https://www.goodup.com">www.goodup.com</a>.</p>
           </form>
 
 
