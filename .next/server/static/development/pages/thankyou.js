@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -251,347 +251,108 @@ function Layout(props) {
 
 /***/ }),
 
-/***/ "./components/Signup/index.js":
-/*!************************************!*\
-  !*** ./components/Signup/index.js ***!
-  \************************************/
+/***/ "./components/Thankyou/index.js":
+/*!**************************************!*\
+  !*** ./components/Thankyou/index.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return thankyou; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Signup/index.js";
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-spring */ "react-spring");
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_spring__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Thankyou/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-const firebase = __webpack_require__(/*! ../../node_modules/firebase */ "./node_modules/firebase/dist/index.node.cjs.js");
-
-const firebaseConfig = __webpack_require__(/*! ../../fire */ "./fire.js");
-
-class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-
-    if (!firebase.apps.length) {
-      try {
-        firebase.initializeApp(firebaseConfig);
-      } catch (err) {
-        console.error("Firebase initialization error raised", err.stack);
+function thankyou() {
+  const props = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])({
+    from: {
+      left: '0%',
+      top: '50%',
+      width: '50%',
+      height: '100%',
+      background: '#fff'
+    },
+    to: async next => {
+      while (1) {
+        await next({
+          left: '0%',
+          top: '50%',
+          width: '100%',
+          height: '100%',
+          background: '#fff'
+        });
       }
     }
-
-    this.state = {
-      email: "",
-      company: "",
-      name: "",
-      hasAgreed: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.inputNameRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-  }
-
-  handleChange(e) {
-    let target = e.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const usersRef = firebase.database().ref("users");
-    const user = {
-      email: this.state.email,
-      company: this.state.company,
-      name: this.state.name,
-      timestamp: firebase.database.ServerValue.TIMESTAMP,
-      url: window.location.href
-    };
-    this.setState({
-      email: "",
-      company: "",
-      name: ""
-    });
-    usersRef.push(user).then(() => {
-      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
-        pathname: '/thankyou'
-      });
-    }).catch(err => {
-      window.alert('Oops, something went wrong' + err);
-    });
-  }
-
-  componentDidMount() {
-    this.inputNameRef.current.focus();
-  }
-
-  render() {
-    return __jsx("div", {
-      className: "flex-1 flex justify-center lg:items-center flex-col",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }, "Download this ebook for free"), __jsx("h1", {
-      className: "font-edmondsans-medium text-descriptive text-32 mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
-    }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
-      onSubmit: this.handleSubmit,
-      className: "FormFields",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx("div", {
-      className: " font-edmondsans text-descriptive flex flex-col mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }, __jsx("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "name",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, "Full Name"), __jsx("input", {
-      className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      ref: this.inputNameRef,
-      type: "text",
-      id: "name",
-      placeholder: "e.g. Anna Green",
-      name: "name",
-      required: true,
-      value: this.state.name,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
-    })), __jsx("div", {
-      className: " font-edmondsans text-descriptive flex flex-col mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 98
-      },
-      __self: this
-    }, __jsx("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "company",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 99
-      },
-      __self: this
-    }, "Your company name"), __jsx("input", {
-      className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      type: "text",
-      id: "company",
-      required: true,
-      placeholder: "e.g. GoodUp",
-      name: "company",
-      value: this.state.company,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 102
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "font-edmondsans text-descriptive flex flex-col mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 113
-      },
-      __self: this
-    }, __jsx("label", {
-      className: "mb-8 font-edmondsans-medium",
-      htmlFor: "name",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 114
-      },
-      __self: this
-    }, "Work e-mail"), __jsx("input", {
-      className: "shadow-1 appearance-none border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      type: "email",
-      id: "email",
-      required: true,
-      placeholder: "e.g. anna@goodup.com",
-      name: "email",
-      value: this.state.email,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 117
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "font-edmondsans text-descriptive mb-24",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 128
-      },
-      __self: this
-    }, __jsx("label", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 129
-      },
-      __self: this
-    }, __jsx("input", {
-      type: "checkbox",
-      name: "hasAgreed",
-      required: true,
-      value: this.state.hasAgreed,
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 130
-      },
-      __self: this
-    }), " ", "I agree to all statements in the ", __jsx("a", {
-      className: "underline",
-      href: "https://goodup.com/terms-and-policy/",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 137
-      },
-      __self: this
-    }, "terms and policy"))), __jsx("div", {
-      className: "mb-32",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 141
-      },
-      __self: this
-    }, __jsx("button", {
-      className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 142
-      },
-      __self: this
-    }, "Download E-book")), __jsx("p", {
-      className: "font-edmondsans text-descriptive",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 146
-      },
-      __self: this
-    }, "Learn more about purpose on  ", __jsx("a", {
-      className: "text-action hover:underline",
-      href: "https://www.goodup.com",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 146
-      },
-      __self: this
-    }, "www.goodup.com"), "."))));
-  }
-
+  });
+  const delay = Object(react_spring__WEBPACK_IMPORTED_MODULE_1__["useSpring"])({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    },
+    delay: 300
+  });
+  return __jsx(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+    className: "flex justify-center items-center",
+    style: props,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "flex flex-col justify-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, __jsx("h1", {
+    className: "font-edmondsans-medium text-24 text-center lg:text-48 text-descriptive",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Enjoy\xA0the\xA0read!"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", __jsx("h2", {
+    className: "font-edmondsans text-16 text-center lg:text-32 text-descriptive",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "Your\xA0ebook\xA0is\xA0being delivered\xA0to\xA0your\xA0inbox."), __jsx(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
+    className: "self-center mt-40 sm:w-1/2",
+    style: delay,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, __jsx("img", {
+    className: "",
+    src: "../../static/beamup.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }))));
 }
 
 /***/ }),
 
-/***/ "./fire.js":
-/*!*****************!*\
-  !*** ./fire.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// Your web app's Firebase configuration
-module.exports = {
-  apiKey: "AIzaSyDQlA5o4mFhGxG90gFJrZYADDlSI6QO_Wk",
-  authDomain: "conversion-landingpage.firebaseapp.com",
-  databaseURL: "https://conversion-landingpage.firebaseio.com",
-  projectId: "conversion-landingpage",
-  storageBucket: "",
-  messagingSenderId: "587238548039",
-  appId: "1:587238548039:web:8d7fb89f075322bf"
-};
-
-/***/ }),
-
-/***/ "./node_modules/firebase/dist/index.node.cjs.js":
-/*!******************************************************!*\
-  !*** ./node_modules/firebase/dist/index.node.cjs.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "@firebase/app"));
-__webpack_require__(/*! @firebase/auth */ "@firebase/auth");
-__webpack_require__(/*! @firebase/database */ "@firebase/database");
-__webpack_require__(/*! @firebase/firestore */ "@firebase/firestore");
-__webpack_require__(/*! @firebase/functions */ "@firebase/functions");
-
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-module.exports = firebase;
-//# sourceMappingURL=index.node.cjs.js.map
-
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/thankyou.js":
+/*!***************************!*\
+  !*** ./pages/thankyou.js ***!
+  \***************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -601,13 +362,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.css */ "./styles/index.css");
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Signup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Signup */ "./components/Signup/index.js");
-/* harmony import */ var _components_Explainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Explainer */ "./components/Explainer/index.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Explainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Explainer */ "./components/Explainer/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Thankyou__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Thankyou */ "./components/Thankyou/index.js");
 /* harmony import */ var _components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GaWrapper */ "./components/GaWrapper/index.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
+var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/thankyou.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -615,106 +374,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-/* harmony default export */ __webpack_exports__["default"] = (() => __jsx("div", {
+/* harmony default export */ __webpack_exports__["default"] = (() => __jsx(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 9
   },
   __self: undefined
-}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_6___default.a, {
+}, __jsx(_components_Explainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 10
   },
   __self: undefined
-}, __jsx("title", {
+}), __jsx(_components_Thankyou__WEBPACK_IMPORTED_MODULE_4__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 11
   },
   __self: undefined
-}, "Purpose Powered by People Ebook - The complete guide to activate employees and embed purpose in your organisation"), __jsx("meta", {
-  name: "The complete guide to activate employees and embed purpose in your organisation",
-  content: "Download a free ebook on purpose and how to activate in your organisation",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:description",
-  content: "The complete guide to activate employees and embed purpose in your organisation.",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:type",
-  content: "Purpose powered by People - The complete guide to activate employees and embed purpose in your organisation",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 14
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:title",
-  content: "Purpose Powered by People Ebook",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 15
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:site_name",
-  content: "Purpose Powered by People Ebook",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 16
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:url",
-  content: "https://purpose.goodup.com",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}), __jsx("meta", {
-  property: "og:image",
-  content: "http://goodup.com/wp-content/uploads/2019/11/email-banner.png",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 18
-  },
-  __self: undefined
-})), __jsx(_components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 20
-  },
-  __self: undefined
-}, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 21
-  },
-  __self: undefined
-}, __jsx(_components_Explainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 22
-  },
-  __self: undefined
-}), __jsx(_components_Signup__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 23
-  },
-  __self: undefined
-})))));
+}))));
 
 /***/ }),
 
@@ -729,92 +413,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 5:
+/*!*********************************!*\
+  !*** multi ./pages/thankyou.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/thankyou.js */"./pages/thankyou.js");
 
-
-/***/ }),
-
-/***/ "@firebase/app":
-/*!********************************!*\
-  !*** external "@firebase/app" ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/app");
-
-/***/ }),
-
-/***/ "@firebase/auth":
-/*!*********************************!*\
-  !*** external "@firebase/auth" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/auth");
-
-/***/ }),
-
-/***/ "@firebase/database":
-/*!*************************************!*\
-  !*** external "@firebase/database" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/database");
-
-/***/ }),
-
-/***/ "@firebase/firestore":
-/*!**************************************!*\
-  !*** external "@firebase/firestore" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/firestore");
-
-/***/ }),
-
-/***/ "@firebase/functions":
-/*!**************************************!*\
-  !*** external "@firebase/functions" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/functions");
-
-/***/ }),
-
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 
@@ -840,6 +447,17 @@ module.exports = require("react-ga");
 
 /***/ }),
 
+/***/ "react-spring":
+/*!*******************************!*\
+  !*** external "react-spring" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-spring");
+
+/***/ }),
+
 /***/ "styled-jsx/style":
 /*!***********************************!*\
   !*** external "styled-jsx/style" ***!
@@ -852,4 +470,4 @@ module.exports = require("styled-jsx/style");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=thankyou.js.map
