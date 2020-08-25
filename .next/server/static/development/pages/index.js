@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,7 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Explainer/index.js";
+var _jsxFileName = "/Users/sezayi/Workspace/goodup-landing/components/Explainer/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import { useSpring, animated } from 'react-spring';
 // const calc = (x, y) => [-(y - window.innerHeight / 2) / 50, (x - window.innerWidth / 2) / 50, 1.1]
@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _GoogleAnalytics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../GoogleAnalytics */ "./components/GoogleAnalytics/index.js");
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/GaWrapper/index.js";
+var _jsxFileName = "/Users/sezayi/Workspace/goodup-landing/components/GaWrapper/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -228,7 +228,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Layout/index.js";
+var _jsxFileName = "/Users/sezayi/Workspace/goodup-landing/components/Layout/index.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -244,7 +244,7 @@ function Layout(props) {
   }, props.children, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "4293174121",
     __self: this
-  }, "@font-face{font-family:\"Edmondsans\";src:url(\"/static/fonts/Edmondsans-Regular.otf\");font-display:auto;font-style:normal;}@font-face{font-family:\"Edmondsans-medium\";src:url(\"/static/fonts/Edmondsans-Medium.otf\");font-display:auto;font-style:normal;font-weight:500;}.font-edmondsans{font-family:\"Edmondsans\";}.font-edmondsans-medium{font-family:\"Edmondsans-medium\";}.a{-webkit-text-decoration:underline;text-decoration:underline;color:#3C96DC;}::-webkit-scrollbar{width:0px;background:transparent;-ms-overflow-style:none;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;}.height{height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zZXpheWkvc2l0ZXMvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS3lCLEFBR29DLEFBTU8sQUFPUCxBQUdPLEFBR0osQUFJaEIsQUFNQyxVQUxZLEdBTTNCLFlBN0JrRCxBQWFsRCxPQVBpRCxBQVVqRCxDQVE0Qix3QkFDSCxHQU5QLGFBbEJFLENBbUJwQixLQWJvQixZQUxBLE1BTUEsWUFMcEIsTUFNa0IsZ0JBQ2xCLDJCQWdCQSIsImZpbGUiOiIvVXNlcnMvc2V6YXlpL3NpdGVzL2dvb2R1cC1sYW5kaW5nL2NvbXBvbmVudHMvTGF5b3V0L2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gTGF5b3V0KHByb3BzKSB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGxnOmgtZnVsbCBsZzpmbGV4LXJvdyBoZWlnaHRcIj5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cblxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fuc1wiO1xuICAgICAgICAgIHNyYzogdXJsKFwiL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLVJlZ3VsYXIub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgIH1cbiAgICAgICAgQGZvbnQtZmFjZSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fucy1tZWRpdW1cIjtcbiAgICAgICAgICBzcmM6IHVybChcIi9zdGF0aWMvZm9udHMvRWRtb25kc2Fucy1NZWRpdW0ub3RmXCIpO1xuICAgICAgICAgIGZvbnQtZGlzcGxheTogYXV0bztcbiAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgfVxuICAgICAgICAuZm9udC1lZG1vbmRzYW5zIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zXCI7XG4gICAgICAgIH1cbiAgICAgICAgLmZvbnQtZWRtb25kc2Fucy1tZWRpdW0ge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBcIkVkbW9uZHNhbnMtbWVkaXVtXCI7XG4gICAgICAgIH1cbiAgICAgICAgLmEge1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gICAgICAgICAgICBjb2xvcjogIzNDOTZEQztcbiAgICAgICAgfVxuICAgICAgICA6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICAgICAgICAgIHdpZHRoOiAwcHg7ICAvKiBSZW1vdmUgc2Nyb2xsYmFyIHNwYWNlICovXG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgIC8qIE9wdGlvbmFsOiBqdXN0IG1ha2Ugc2Nyb2xsYmFyIGludmlzaWJsZSAqL1xuICAgICAgICAgICAgLW1zLW92ZXJmbG93LXN0eWxlOiBub25lOyAvKiBJRSAxMSAqL1xuICAgICAgICAgICAgc2Nyb2xsYmFyLXdpZHRoOiBub25lOyAvKiBGaXJlZm94IDY0ICovXG4gICAgICAgIH1cbiAgICAgICAgLmhlaWdodCB7XG4gICAgICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvZGl2PlxuICApO1xufVxuXG5leHBvcnQgZGVmYXVsdCBMYXlvdXQ7XG4iXX0= */\n/*@ sourceURL=/Users/sezayi/sites/goodup-landing/components/Layout/index.js */"));
+  }, "@font-face{font-family:\"Edmondsans\";src:url(\"/static/fonts/Edmondsans-Regular.otf\");font-display:auto;font-style:normal;}@font-face{font-family:\"Edmondsans-medium\";src:url(\"/static/fonts/Edmondsans-Medium.otf\");font-display:auto;font-style:normal;font-weight:500;}.font-edmondsans{font-family:\"Edmondsans\";}.font-edmondsans-medium{font-family:\"Edmondsans-medium\";}.a{-webkit-text-decoration:underline;text-decoration:underline;color:#3C96DC;}::-webkit-scrollbar{width:0px;background:transparent;-ms-overflow-style:none;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;}.height{height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zZXpheWkvV29ya3NwYWNlL2dvb2R1cC1sYW5kaW5nL2NvbXBvbmVudHMvTGF5b3V0L2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUt5QixBQUdvQyxBQU1PLEFBT1AsQUFHTyxBQUdKLEFBSWhCLEFBTUMsVUFMWSxHQU0zQixZQTdCa0QsQUFhbEQsT0FQaUQsQUFVakQsQ0FRNEIsd0JBQ0gsR0FOUCxhQWxCRSxDQW1CcEIsS0Fib0IsWUFMQSxNQU1BLFlBTHBCLE1BTWtCLGdCQUNsQiwyQkFnQkEiLCJmaWxlIjoiL1VzZXJzL3NlemF5aS9Xb3Jrc3BhY2UvZ29vZHVwLWxhbmRpbmcvY29tcG9uZW50cy9MYXlvdXQvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBMYXlvdXQocHJvcHMpIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgbGc6aC1mdWxsIGxnOmZsZXgtcm93IGhlaWdodFwiPlxuICAgICAge3Byb3BzLmNoaWxkcmVufVxuXG4gICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zXCI7XG4gICAgICAgICAgc3JjOiB1cmwoXCIvc3RhdGljL2ZvbnRzL0VkbW9uZHNhbnMtUmVndWxhci5vdGZcIik7XG4gICAgICAgICAgZm9udC1kaXNwbGF5OiBhdXRvO1xuICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgfVxuICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICBmb250LWZhbWlseTogXCJFZG1vbmRzYW5zLW1lZGl1bVwiO1xuICAgICAgICAgIHNyYzogdXJsKFwiL3N0YXRpYy9mb250cy9FZG1vbmRzYW5zLU1lZGl1bS5vdGZcIik7XG4gICAgICAgICAgZm9udC1kaXNwbGF5OiBhdXRvO1xuICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xuICAgICAgICB9XG4gICAgICAgIC5mb250LWVkbW9uZHNhbnMge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBcIkVkbW9uZHNhbnNcIjtcbiAgICAgICAgfVxuICAgICAgICAuZm9udC1lZG1vbmRzYW5zLW1lZGl1bSB7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IFwiRWRtb25kc2Fucy1tZWRpdW1cIjtcbiAgICAgICAgfVxuICAgICAgICAuYSB7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICAgICAgICAgIGNvbG9yOiAjM0M5NkRDO1xuICAgICAgICB9XG4gICAgICAgIDo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICAgICAgICAgICAgd2lkdGg6IDBweDsgIC8qIFJlbW92ZSBzY3JvbGxiYXIgc3BhY2UgKi9cbiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyAgLyogT3B0aW9uYWw6IGp1c3QgbWFrZSBzY3JvbGxiYXIgaW52aXNpYmxlICovXG4gICAgICAgICAgICAtbXMtb3ZlcmZsb3ctc3R5bGU6IG5vbmU7IC8qIElFIDExICovXG4gICAgICAgICAgICBzY3JvbGxiYXItd2lkdGg6IG5vbmU7IC8qIEZpcmVmb3ggNjQgKi9cbiAgICAgICAgfVxuICAgICAgICAuaGVpZ2h0IHtcbiAgICAgICAgICBoZWlnaHQ6IDEwMHZoO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmV4cG9ydCBkZWZhdWx0IExheW91dDtcbiJdfQ== */\n/*@ sourceURL=/Users/sezayi/Workspace/goodup-landing/components/Layout/index.js */"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -265,117 +265,117 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/components/Signup/index.js";
+var _jsxFileName = "/Users/sezayi/Workspace/goodup-landing/components/Signup/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-const firebase = __webpack_require__(/*! ../../node_modules/firebase */ "./node_modules/firebase/dist/index.node.cjs.js");
-
-const firebaseConfig = __webpack_require__(/*! ../../fire */ "./fire.js");
-
 class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-
-    if (!firebase.apps.length) {
-      try {
-        firebase.initializeApp(firebaseConfig);
-      } catch (err) {
-        console.error("Firebase initialization error raised", err.stack);
-      }
-    }
-
-    this.state = {
-      email: "",
-      company: "",
-      name: "",
-      hasAgreed: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.inputNameRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-  }
-
-  handleChange(e) {
-    let target = e.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const usersRef = firebase.database().ref("users");
-    const user = {
-      email: this.state.email,
-      company: this.state.company,
-      name: this.state.name,
-      timestamp: firebase.database.ServerValue.TIMESTAMP,
-      url: window.location.href
-    };
-    this.setState({
-      email: "",
-      company: "",
-      name: ""
-    });
-    usersRef.push(user).then(() => {
-      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push({
-        pathname: '/thankyou'
-      });
-    }).catch(err => {
-      window.alert('Oops, something went wrong' + err);
-    });
-  }
-
-  componentDidMount() {
-    this.inputNameRef.current.focus();
-  }
-
   render() {
     return __jsx("div", {
       className: "flex-1 flex justify-center lg:items-center flex-col",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 6
       },
       __self: this
     }, __jsx("div", {
       className: "lg:w-3/4 px-16 lg:mt-64 overflow-x-hidden ",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 7
       },
       __self: this
     }, __jsx("h2", {
       className: "font-edmondsans text-action text-24 mt-48 mb-8 lg:mt-0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 8
       },
       __self: this
     }, "Download this ebook for free"), __jsx("h1", {
       className: "font-edmondsans-medium text-descriptive text-32 mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 11
       },
       __self: this
     }, " ", "The complete guide to activate employees and embed purpose in your organisation"), __jsx("form", {
-      onSubmit: this.handleSubmit,
-      className: "FormFields",
+      method: "POST",
+      action: "https://goodup.activehosted.com/proc.php",
+      id: "_form_5_",
+      novalidate: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 16
       },
       __self: this
-    }, __jsx("div", {
+    }, __jsx("input", {
+      type: "hidden",
+      name: "u",
+      value: "5",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "f",
+      value: "5",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "s",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "c",
+      value: "0",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "m",
+      value: "0",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "act",
+      value: "sub",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }), __jsx("input", {
+      type: "hidden",
+      name: "v",
+      value: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }), __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 30
       },
       __self: this
     }, __jsx("label", {
@@ -383,29 +383,26 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 31
       },
       __self: this
     }, "Full Name"), __jsx("input", {
       className: "shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3",
-      ref: this.inputNameRef,
       type: "text",
       id: "name",
       placeholder: "e.g. Anna Green",
       name: "name",
       required: true,
-      value: this.state.name,
-      onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 34
       },
       __self: this
     })), __jsx("div", {
       className: " font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 43
       },
       __self: this
     }, __jsx("label", {
@@ -413,7 +410,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "company",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 44
       },
       __self: this
     }, "Your company name"), __jsx("input", {
@@ -423,18 +420,16 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       required: true,
       placeholder: "e.g. GoodUp",
       name: "company",
-      value: this.state.company,
-      onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 47
       },
       __self: this
     })), __jsx("div", {
       className: "font-edmondsans text-descriptive flex flex-col mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 56
       },
       __self: this
     }, __jsx("label", {
@@ -442,7 +437,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       htmlFor: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 57
       },
       __self: this
     }, "Work e-mail"), __jsx("input", {
@@ -452,139 +447,74 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       required: true,
       placeholder: "e.g. anna@goodup.com",
       name: "email",
-      value: this.state.email,
-      onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 60
       },
       __self: this
     })), __jsx("div", {
       className: "font-edmondsans text-descriptive mb-24",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 69
       },
       __self: this
     }, __jsx("label", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 70
       },
       __self: this
     }, __jsx("input", {
       type: "checkbox",
       name: "hasAgreed",
       required: true,
-      value: this.state.hasAgreed,
-      onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 71
       },
       __self: this
-    }), " ", "I agree to all statements in the ", __jsx("a", {
+    }), " I agree to all statements in the", " ", __jsx("a", {
       className: "underline",
       href: "https://goodup.com/terms-and-policy/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 73
       },
       __self: this
     }, "terms and policy"))), __jsx("div", {
       className: "mb-32",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 82
       },
       __self: this
     }, __jsx("button", {
       className: "font-edmondsans-medium text-white text-center w-full lg:w-2/5 rounded bg-action py-16 px-16 hover:bg-action-shade40",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
+        lineNumber: 83
       },
       __self: this
     }, "Download E-book")), __jsx("p", {
       className: "font-edmondsans text-descriptive",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 87
       },
       __self: this
-    }, "Learn more about purpose on  ", __jsx("a", {
+    }, "Learn more about purpose on", " ", __jsx("a", {
       className: "text-action hover:underline",
       href: "https://www.goodup.com",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 89
       },
       __self: this
     }, "www.goodup.com"), "."))));
   }
 
 }
-
-/***/ }),
-
-/***/ "./fire.js":
-/*!*****************!*\
-  !*** ./fire.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// Your web app's Firebase configuration
-module.exports = {
-  apiKey: "AIzaSyDQlA5o4mFhGxG90gFJrZYADDlSI6QO_Wk",
-  authDomain: "conversion-landingpage.firebaseapp.com",
-  databaseURL: "https://conversion-landingpage.firebaseio.com",
-  projectId: "conversion-landingpage",
-  storageBucket: "",
-  messagingSenderId: "587238548039",
-  appId: "1:587238548039:web:8d7fb89f075322bf"
-};
-
-/***/ }),
-
-/***/ "./node_modules/firebase/dist/index.node.cjs.js":
-/*!******************************************************!*\
-  !*** ./node_modules/firebase/dist/index.node.cjs.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "@firebase/app"));
-__webpack_require__(/*! @firebase/auth */ "@firebase/auth");
-__webpack_require__(/*! @firebase/database */ "@firebase/database");
-__webpack_require__(/*! @firebase/firestore */ "@firebase/firestore");
-__webpack_require__(/*! @firebase/functions */ "@firebase/functions");
-
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-module.exports = firebase;
-//# sourceMappingURL=index.node.cjs.js.map
-
 
 /***/ }),
 
@@ -607,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_GaWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GaWrapper */ "./components/GaWrapper/index.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/sezayi/sites/goodup-landing/pages/index.js";
+var _jsxFileName = "/Users/sezayi/Workspace/goodup-landing/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -729,70 +659,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sezayi/sites/goodup-landing/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/sezayi/Workspace/goodup-landing/pages/index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "@firebase/app":
-/*!********************************!*\
-  !*** external "@firebase/app" ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/app");
-
-/***/ }),
-
-/***/ "@firebase/auth":
-/*!*********************************!*\
-  !*** external "@firebase/auth" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/auth");
-
-/***/ }),
-
-/***/ "@firebase/database":
-/*!*************************************!*\
-  !*** external "@firebase/database" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/database");
-
-/***/ }),
-
-/***/ "@firebase/firestore":
-/*!**************************************!*\
-  !*** external "@firebase/firestore" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/firestore");
-
-/***/ }),
-
-/***/ "@firebase/functions":
-/*!**************************************!*\
-  !*** external "@firebase/functions" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@firebase/functions");
 
 /***/ }),
 

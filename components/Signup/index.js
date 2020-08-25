@@ -1,72 +1,6 @@
-import Router from 'next/router';
-
-const firebase = require("../../node_modules/firebase");
-const firebaseConfig = require("../../fire");
+import Router from "next/router";
 
 export default class Signup extends React.Component {
-  constructor() {
-    super();
-
-    if (!firebase.apps.length) {
-      try {
-        firebase.initializeApp(firebaseConfig);
-      } catch (err) {
-        console.error("Firebase initialization error raised", err.stack);
-      }
-    }
-
-    this.state = {
-      email: "",
-      company: "",
-      name: "",
-      hasAgreed: false,
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-    this.inputNameRef = React.createRef();
-  }
-
-  handleChange(e) {
-    let target = e.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const usersRef = firebase.database().ref("users");
-    const user = {
-      email: this.state.email,
-      company: this.state.company,
-      name: this.state.name,
-      timestamp: firebase.database.ServerValue.TIMESTAMP,
-      url: window.location.href
-    };
-    this.setState({
-      email: "",
-      company: "",
-      name: "",
-    });
-    usersRef.push(user)
-    .then(() => {
-      Router.push({pathname: '/thankyou'})
-    })
-    .catch(err => {
-      window.alert('Oops, something went wrong' + err)
-    }
-    )}
-
-  componentDidMount() {
-    this.inputNameRef.current.focus();
-  }
-
-
   render() {
     return (
       <div className="flex-1 flex justify-center lg:items-center flex-col">
@@ -76,23 +10,34 @@ export default class Signup extends React.Component {
           </h2>
           <h1 className="font-edmondsans-medium text-descriptive text-32 mb-24">
             {" "}
-            The complete guide to activate employees and embed purpose in your organisation
+            The complete guide to activate employees and embed purpose in your
+            organisation
           </h1>
-          <form onSubmit={this.handleSubmit} className="FormFields">
+          <form
+            method="POST"
+            action="https://goodup.activehosted.com/proc.php"
+            id="_form_5_"
+            novalidate
+          >
+            <input type="hidden" name="u" value="5" />
+            <input type="hidden" name="f" value="5" />
+            <input type="hidden" name="s" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+
             <div className=" font-edmondsans text-descriptive flex flex-col mb-24">
               <label className="mb-8 font-edmondsans-medium" htmlFor="name">
                 Full Name
               </label>
               <input
                 className="shadow-1 border border-grey rounded w-full py-12 px-8 focus:outline-none focus:border-action focus:shadow-3"
-                ref={this.inputNameRef}
                 type="text"
                 id="name"
                 placeholder="e.g. Anna Green"
                 name="name"
                 required={true}
-                value={this.state.name}
-                onChange={this.handleChange}
               />
             </div>
             <div className=" font-edmondsans text-descriptive flex flex-col mb-24">
@@ -106,8 +51,6 @@ export default class Signup extends React.Component {
                 required={true}
                 placeholder="e.g. GoodUp"
                 name="company"
-                value={this.state.company}
-                onChange={this.handleChange}
               />
             </div>
             <div className="font-edmondsans text-descriptive flex flex-col mb-24">
@@ -121,20 +64,18 @@ export default class Signup extends React.Component {
                 required={true}
                 placeholder="e.g. anna@goodup.com"
                 name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
               />
             </div>
             <div className="font-edmondsans text-descriptive mb-24">
               <label>
-                <input
-                  type="checkbox"
-                  name="hasAgreed"
-                  required={true}
-                  value={this.state.hasAgreed}
-                  onChange={this.handleChange}
-                />{" "}
-                I agree to all statements in the <a className="underline" href="https://goodup.com/terms-and-policy/">terms and policy</a>
+                <input type="checkbox" name="hasAgreed" required={true} /> I
+                agree to all statements in the{" "}
+                <a
+                  className="underline"
+                  href="https://goodup.com/terms-and-policy/"
+                >
+                  terms and policy
+                </a>
               </label>
             </div>
 
@@ -143,11 +84,18 @@ export default class Signup extends React.Component {
                 Download E-book
               </button>
             </div>
-            <p className="font-edmondsans text-descriptive">Learn more about purpose on  <a className="text-action hover:underline" href="https://www.goodup.com">www.goodup.com</a>.</p>
+            <p className="font-edmondsans text-descriptive">
+              Learn more about purpose on{" "}
+              <a
+                className="text-action hover:underline"
+                href="https://www.goodup.com"
+              >
+                www.goodup.com
+              </a>
+              .
+            </p>
           </form>
-
-
-          </div>
+        </div>
       </div>
     );
   }
